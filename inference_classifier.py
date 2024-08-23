@@ -59,9 +59,13 @@ while True:
 
         x2 = int(max(x_) * W) - 10
         y2 = int(max(y_) * H) - 10
-
-        prediction = model.predict([np.asarray(data_aux)])
-        predicted_character = labels_dict[int(prediction[0])]
+        X = [np.asarray(data_aux)]
+       # print(X)
+        if len(X[0]) == 84:
+            predicted_character = 'Two Hands'
+        else:
+            prediction = model.predict([np.asarray(data_aux)])
+            predicted_character = labels_dict[int(prediction[0])]
 
         cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 0), 4)
         cv2.putText(frame, predicted_character, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 0, 0), 3,
