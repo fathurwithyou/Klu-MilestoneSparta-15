@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    {% if 'name' in session %}
+        <h2>Welcome, {{ session['name'] }}!</h2>
+        <p>You are logged in as {{ session['email'] }}.</p>
+        <form action="{{ url_for('logout') }}" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    {% else %}
+        <h2>Welcome to Our Website!</h2>
+        <p>Please choose an option below:</p>
+        <a href="{{ url_for('login') }}">Login</a>
+        <br>
+        <a href="{{ url_for('register') }}">Register</a>
+    {% endif %}
+</body>
+</html>
