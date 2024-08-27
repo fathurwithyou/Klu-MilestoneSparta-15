@@ -2,9 +2,8 @@ import React from 'react'
 
 const Services = () => {
     return (
-      <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
         <div className="p-5 lg:pt-3 mt-10">
-            <h1 className="font-bold text-navy text-5xl mb-8 ml-8 lg:ml-5">Services</h1>
+            <h1 className="text-center font-bold text-navy text-5xl mb-8 ml-8 lg:ml-5">Services</h1>
             <div className="w-full flex flex-col space-y-8 ml-10 lg:ml-6">
                 {/* Baris 1 */}
                 <div className="w-full flex flex-col">
@@ -29,7 +28,6 @@ const Services = () => {
                 </div>
             </div>
         </div>
-      </div>
     );
   };
   

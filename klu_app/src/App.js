@@ -16,31 +16,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Rute dengan Navbar */}
         <Route
           path="/"
           element={
             <div>
-              <Navbar />
               <Home />
-            </div>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <div>
-              <Navbar />
-              <About />
-            </div>
-          }
-        />
-        <Route
-          path="/services"
-          element={
-            <div>
-              <Navbar />
-              <Services />
             </div>
           }
         />
@@ -51,6 +31,15 @@ function App() {
             <div>
               <NavbarLogin />
               <HomeLogin />
+            </div>
+          }
+          />
+        <Route
+          path="/login"
+          element={
+            <div>
+              <Navbar />
+              <Login />
             </div>
           }
         />
