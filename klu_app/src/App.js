@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Services from "./components/Services";
 import Login from "./components/Login";
+import LoginPage from "./components/LoginPage";
 import NavbarLogin from "./components/NavbarLogin";
 import HomeLogin from "./components/HomeLogin";
 import Test from "./components/Test";
@@ -35,11 +36,10 @@ function App() {
           }
           />
         <Route
-          path="/login"
+          path="/loginpage"
           element={
             <div>
-              <Navbar />
-              <Login />
+              <LoginPage />
             </div>
           }
         />
