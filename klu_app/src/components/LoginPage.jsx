@@ -42,7 +42,7 @@ const LoginPage = () => {
       <p className="text-sm">
         Haven't registered?{" "}
         <Link
-          to="/signup"
+          to="/signuppage"
           className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
         >
           Sign up

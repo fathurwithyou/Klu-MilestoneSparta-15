@@ -6,7 +6,7 @@ import Home from "./components/Home";
 // import Services from "./components/Services";
 // import Login from "./components/Login";
 import LoginPage from "./components/LoginPage";
-import Signup from "./components/Signup";
+import SignupPage from "./components/SignupPage";
 import NavbarLogin from "./components/NavbarLogin";
 import HomeLogin from "./components/HomeLogin";
 import Test from "./components/Test";
@@ -45,10 +45,10 @@ function App() {
           }
         />
         <Route 
-          path="/signup" 
+          path="/signuppage" 
             element={
               <div>
-                <Signup />
+                <SignupPage />
               </div>
             } 
           />
