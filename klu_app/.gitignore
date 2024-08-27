@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+src/backend/sheet_id.txt
+credentials.json
+klu-milestone-51e07c135778.json
