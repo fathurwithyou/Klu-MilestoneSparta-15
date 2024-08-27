@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Signup = () => {
+const SignupPage = () => {
   return (
     <div id="bg" className="w-full h-screen flex flex-col justify-center items-center px-10 lg:px-[72px] pt-[100px]">
       <div className="header mb-8">
@@ -78,18 +77,8 @@ const Signup = () => {
           Sign Up
         </button>
       </div>
-
-      <p className="text-sm">
-        Already have an account?{" "}
-        <Link
-          to="/login"
-          className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-        >
-          Log in
-        </Link>
-      </p>
     </div>
   );
 };
 
-export default Signup;
+export default SignupPage;
