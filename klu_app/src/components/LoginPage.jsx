@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center">
+    <div id="bg" className="h-screen w-screen flex flex-col justify-center items-center">
       <div className="header mb-8">
         <h1 className="font-bold text-5xl text-blue-500">Log In</h1>
       </div>
@@ -40,12 +41,12 @@ const LoginPage = () => {
 
       <p className="text-sm">
         Haven't registered?{" "}
-        <a
-          href="/signup"
+        <Link
+          to="/signup"
           className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
         >
           Sign up
-        </a>
+        </Link>
       </p>
     </div>
   );

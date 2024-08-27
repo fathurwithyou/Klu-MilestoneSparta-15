@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 // import About from "./components/About";
 // import Services from "./components/Services";
-import Login from "./components/Login";
+// import Login from "./components/Login";
 import LoginPage from "./components/LoginPage";
+import Signup from "./components/Signup";
 import NavbarLogin from "./components/NavbarLogin";
 import HomeLogin from "./components/HomeLogin";
 import Test from "./components/Test";
@@ -43,6 +44,14 @@ function App() {
             </div>
           }
         />
+        <Route 
+          path="/signup" 
+            element={
+              <div>
+                <Signup />
+              </div>
+            } 
+          />
         <Route
           path="/test"
           element={
@@ -80,7 +89,7 @@ function App() {
           }
         />
         {/* Rute tanpa Navbar */}
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
       </Routes>
     </Router>
   );
