@@ -82,7 +82,7 @@ function App() {
           }
         />
         <Route
-          path="/scan"
+          path="/profile"
           element={
             <div>
               <NavbarLogin />
