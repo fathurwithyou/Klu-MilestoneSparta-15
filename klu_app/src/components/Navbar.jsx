@@ -6,11 +6,11 @@ import logo from "../asset/logo_klu.png";
 const navLink = [
   { id: "about", name: "About", type: "scroll" },
   { id: "services", name: "Services", type: "scroll" },
-  { id: "/login", name: "Sign Up/Log In", type: "router" },
+  { id: "/loginpage", name: "Sign Up/Log In", type: "router" },
 ];
 
 const Navbar = () => {
-  return (
+  return (  
     <div className="flex justify-between items-center px-5 lg:px-[72px] h-[80px] w-full fixed top-0">
       <div className="flex items-center mt-16">
         <RouterLink to="/">
