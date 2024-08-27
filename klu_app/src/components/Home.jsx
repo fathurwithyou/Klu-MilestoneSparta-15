@@ -3,6 +3,7 @@ import foto from '../asset/landing_page.png';
 import About from './About';
 import Services from './Services';
 import Navbar from './Navbar';
+import Testimonial from './Testimonial';
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
       </div>
       <About />
       <Services />
+      <Testimonial />
     </div>
   );
 };

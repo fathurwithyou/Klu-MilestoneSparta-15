@@ -4,7 +4,7 @@ import logo from "../asset/logo_klu.png";
 const About = () => {
   return (
     <div id='about' className="p-5 lg:pt-3 mt-10">
-      <h1 className="text-center font-bold text-navy text-5xl mb-8 ml-8 lg:ml-5">About</h1>
+      <h1 className="text-center font-bold text-navy text-5xl mb-8">About</h1>
       <div className="w-full flex flex-col lg:flex-row items-center justify-between">
         {/* Kolom Kiri untuk Gambar */}
         <div className="w-full lg:w-1/5 flex justify-center lg:justify-start mb-8 lg:mb-0">

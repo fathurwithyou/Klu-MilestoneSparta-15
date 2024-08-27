@@ -6,6 +6,7 @@ import logo from "../asset/logo_klu.png";
 const navLink = [
   { id: "about", name: "About", type: "scroll" },
   { id: "services", name: "Services", type: "scroll" },
+  { id: "testimonial", name: "Testimonial", type: "scroll" },
   { id: "/loginpage", name: "Sign Up/Log In", type: "router" },
 ];
 
