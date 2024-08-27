@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
 import logo from "../asset/logo_klu.png";
@@ -10,11 +10,29 @@ const navLink = [
 ];
 
 const Navbar = () => {
-  return (  
-    <div className="flex justify-between items-center px-5 lg:px-[72px] h-[80px] w-full fixed top-0">
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <div
+      className={`flex justify-between items-center px-5 lg:px-[72px] h-[80px] w-full fixed top-0 transition-opacity duration-500 ${
+        scrollPosition > 50 ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
+      }`}
+    >
       <div className="flex items-center mt-16">
         <RouterLink to="/">
-          <img src={logo} alt="klu" className="h-52 w-auto cursor-pointer" />
+          <img src={logo} alt="klu" className="h-48 w-auto cursor-pointer" />
         </RouterLink>
       </div>
       <ul className="flex items-center mt-16">

@@ -18,6 +18,9 @@ const Home = () => {
         </div>
         <div className="w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
           <h1 className="font-bold text-black text-5xl">Belajar Bahasa Isyarat dengan <span className="text-navy">Klu</span>!</h1>
+          {/* Add getting started */}
+          <button
+            className="bg-navy text-white font-semibold text-xl py-2 px-4 rounded-lg mt-8 hover:bg-blue-900">Getting Started</button>
         </div>
       </div>
       <About />
