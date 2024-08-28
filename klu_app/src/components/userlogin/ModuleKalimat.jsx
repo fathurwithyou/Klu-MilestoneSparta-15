@@ -2,6 +2,7 @@ import React from 'react';
 import Assalamualaikum from '../../asset/assalamualaikum.jpg'; 
 import Selamat from '../../asset/selamat.jpg'; 
 import HomeIcon from './HomeIcon'
+import { Link } from 'react-router-dom';
 
 const ModuleKalimat = () => {
   return (

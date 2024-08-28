@@ -2,6 +2,7 @@ import React from 'react';
 import hurufA from '../../asset/huruf A.jpeg'; 
 import hurufB from '../../asset/huruf B.jpeg'; 
 import HomeIcon from './HomeIcon';
+import { Link } from 'react-router-dom';
 
 const ModuleAlfabet1 = () => {
   return (
