@@ -23,5 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 src/backend/sheet_id.txt
+src/backend/key.txt
 credentials.json
 klu-milestone-51e07c135778.json

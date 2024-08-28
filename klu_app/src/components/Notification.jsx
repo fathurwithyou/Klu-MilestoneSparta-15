@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const Notification = ({ message, type, onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       onClose();
-    }, 3000); // Auto close after 3 seconds
+    }, 3000); 
 
     return () => clearTimeout(timer);
   }, [onClose]);

@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const fs = require("fs");
 const cors = require("cors");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 const app = express();
 app.use(cors());
@@ -20,6 +22,8 @@ const auth = new google.auth.GoogleAuth({
 });
 
 const sheets = google.sheets({ version: "v4", auth });
+
+const JWT_SECRET = fs.readFileSync("key.txt", "utf8").trim();
 
 app.post("/check-availability", async (req, res) => {
   const { username, email } = req.body;
@@ -48,19 +52,22 @@ app.post("/check-availability", async (req, res) => {
 app.post("/submit-form", async (req, res) => {
   const { name, dob, username, email, password } = req.body;
   const ts = new Date().toISOString();
+
   try {
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     await sheets.spreadsheets.values.append({
       spreadsheetId: SPREADSHEET_ID,
       range: RANGE,
       valueInputOption: "RAW",
       resource: {
-        values: [[ts, username, password, name, dob, email]],
+        values: [[ts, username, hashedPassword, name, dob, email]],
       },
     });
 
     res.status(200).json({ message: "Form submitted successfully" });
   } catch (error) {
-    console.error("Error writing to Google Sheet:", error);
+    console.error("Error writing to Database:", error);
     res.status(500).json({ message: "Error submitting form" });
   }
 });
@@ -76,39 +83,26 @@ app.post("/login", async (req, res) => {
       });
 
       const rows = response.data.values || [];
-
-      if (rows.find((row) => row[1] === usernameOrEmail || row[5] === usernameOrEmail)){
-        const user = rows.find((row) => row[1] === usernameOrEmail || row[5] === usernameOrEmail);
-        return {
-          username: user[1],
-          password: user[2],
-          name: user[3],
-          dob: user[4],
-          email: user[5],
-        };
-      }
+      return rows.find((row) => row[1] === usernameOrEmail || row[5] === usernameOrEmail);
     } catch (error) {
       console.error("Error finding user:", error);
       return null;
     }
   };
 
-  const generateToken = (user) => {
-    return Buffer.from(JSON.stringify(user)).toString("base64");
-  };
-
   try {
-    // Replace this with actual authentication logic
     const user = await findUserByUsernameOrEmail(username);
 
-    if (!user || user.password !== password) {
+    if (!user || !(await bcrypt.compare(password, user[2]))) {
       return res.status(401).json({ message: "Invalid username or password" });
     }
+    const token = jwt.sign(
+      { username: user[1], name: user[3], email: user[5] },
+      JWT_SECRET,
+      { expiresIn: "1h" }
+    );
 
-    // Generate a token (this is a simplified example)
-    const token = generateToken(user);
-
-    res.status(200).json({ token, user });
+    res.status(200).json({ token, user: { username: user[1], name: user[3], email: user[5] } });
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ message: "Error logging in" });
@@ -121,21 +115,16 @@ const authenticate = (req, res, next) => {
     return res.status(401).json({ message: "Access denied" });
   }
 
-  const verifyToken = (token) => {
-    const decoded = Buffer.from(token, "base64").toString("utf-8");
-    return JSON.parse(decoded);
-  };
-
   try {
-    const user = verifyToken(token);
-    req.user = user;
+    const decoded = jwt.verify(token, JWT_SECRET);
+    req.user = decoded;
     next();
   } catch (error) {
     res.status(403).json({ message: "Invalid token" });
   }
 };
 
-app.get("/dashboard", authenticate, (req, res) => {
+app.get("/home", authenticate, (req, res) => {
   res.json({ message: `Welcome, ${req.user.username}!` });
 });
 
