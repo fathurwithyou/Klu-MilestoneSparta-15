@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import hurufE from '../../asset/huruf e.jpeg'; 
-import hurufF from '../../asset/huruf f.jpeg'; 
+import hurufG from '../../asset/huruf g.jpeg'; 
+import hurufH from '../../asset/huruf h.jpeg'; 
 import HomeIcon from './HomeIcon';
 
 const ModuleAlfabet2 = () => {
@@ -14,14 +14,14 @@ const ModuleAlfabet2 = () => {
             {/* Kolom Kiri */}
             <div className="w-full lg:w-1/2 flex flex-col justify-center items-center mb-8 lg:mb-0 text-center">
               <img
-                src={hurufE}
-                alt="Huruf E"
+                src={hurufG}
+                alt="Huruf G"
                 className="max-w-full h-auto transform transition-transform duration-300 rounded-lg"
                 style={{ width: '280px', height: '210px' }}
               />
-              <h2 className="font-bold text-navy text-4xl mt-2">E</h2> 
+              <h2 className="font-bold text-navy text-4xl mt-2">G</h2> 
               <p className="text-lg text-navy mt-2">
-                Huruf E diawali dengan isyarat huruf B, lalu turunkan keempat jari sehingga ujungnya menyentuh jempol. Pastikan Anda merapatkan jari dengan telapak tangan. <br /><br /> 
+                Huruf G dilakukan dengan meluruskan jari jempol dan telunjuk serta beri jarak sekitar 1 cm, lalu tunjukkan secara menyamping selagi telapak tangan menghadap Anda. <br /><br /> 
               </p>
             </div>
     
@@ -31,14 +31,14 @@ const ModuleAlfabet2 = () => {
             {/* Kolom Kanan */}
             <div className="w-full lg:w-1/2 flex flex-col justify-center items-center mb-8 lg:mb-0 text-center">
               <img
-                src={hurufF}
-                alt="Huruf F"
+                src={hurufH}
+                alt="Huruf H"
                 className="max-w-full h-auto transform transition-transform duration-300 rounded-lg"
                 style={{ width: '280px', height: '210px' }}
               />
-              <h2 className="font-bold text-navy text-4xl mt-2">F</h2> 
+              <h2 className="font-bold text-navy text-4xl mt-2">H</h2> 
               <p className="text-lg text-navy mt-2">
-              Huruf F dilakukan dengan mempertemukan ujung jari telunjuk dan jempol, dan luruskan ketiga sisa jari Anda ke atas. Isyarat ini adalah kebalikan dari isyarat huruf D sehingga sering tertukar.<br /><br /> 
+              Huruf H dilakukan dengan membuat isyarat abjad G dan luruskan jari tengah rapat dengan jari telunjuk, lalu telapak tangan menghadap ke arah Anda. <br /><br /> 
               </p>
             </div>
           </div>

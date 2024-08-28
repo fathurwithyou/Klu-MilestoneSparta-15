@@ -13,6 +13,7 @@ import Profile from "./components/userlogin/Profile";
 import ModuleAlfabet1 from "./components/userlogin/ModuleAlfabet1";
 import ModuleAlfabet2 from "./components/userlogin/ModuleAlfabet2";
 import ModuleAlfabet3 from './components/userlogin/ModuleAlfabet3';
+import ModuleAlfabet4 from './components/userlogin/ModuleAlfabet4';
 import ModuleKalimat from "./components/userlogin/ModuleKalimat";
 
 function App() {
@@ -113,6 +114,15 @@ function App() {
             <div>
               <NavbarLogin />
               <ModuleAlfabet3 />
+            </div>
+          }
+        />
+        <Route
+          path="/module-alfabet-4"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleAlfabet4 />
             </div>
           }
         />
