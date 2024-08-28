@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import hurufM from '../../asset/huruf m.jpeg'; 
-import hurufN from '../../asset/huruf n.jpeg'; 
+import hurufQ from '../../asset/huruf q.jpeg'; 
+import hurufR from '../../asset/huruf r.jpeg'; 
 import HomeIcon from './HomeIcon';
 
-const ModuleAlfabet7 = () => {
+const ModuleAlfabet9 = () => {
     return (
         <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
           <HomeIcon />
@@ -14,14 +14,14 @@ const ModuleAlfabet7 = () => {
             {/* Kolom Kiri */}
             <div className="w-full lg:w-1/2 flex flex-col justify-center items-center mb-8 lg:mb-0 text-center">
               <img
-                src={hurufM}
-                alt="Huruf M"
+                src={hurufQ}
+                alt="Huruf Q"
                 className="max-w-full h-auto transform transition-transform duration-300 rounded-lg"
                 style={{ width: '280px', height: '210px' }}
               />
-              <h2 className="font-bold text-navy text-4xl mt-2">M</h2> 
+              <h2 className="font-bold text-navy text-4xl mt-2">Q</h2> 
               <p className="text-lg text-navy mt-2">
-                Huruf M dilakukan dengan mengepalkan tangan dan hadapkan ke depan, lalu selipkan jari jempol di antara pangkal jari manis dan kelingking.
+                Huruf Q dilakukan dengan membuat isyarat huruf G yang menunjuk ke bawah. Kedua ujung jari harus nyaris bersentuhan.
                 <br /><br /> 
               </p>
             </div>
@@ -32,24 +32,24 @@ const ModuleAlfabet7 = () => {
             {/* Kolom Kanan */}
             <div className="w-full lg:w-1/2 flex flex-col justify-center items-center mb-8 lg:mb-0 text-center">
               <img
-                src={hurufN}
-                alt="Huruf N"
+                src={hurufR}
+                alt="Huruf P"
                 className="max-w-full h-auto transform transition-transform duration-300 rounded-lg"
                 style={{ width: '280px', height: '210px' }}
               />
-              <h2 className="font-bold text-navy text-4xl mt-2">N</h2> 
+              <h2 className="font-bold text-navy text-4xl mt-2">P</h2> 
               <p className="text-lg text-navy mt-2">
-                Huruf N dilakukan dengan mengepalkan tangan dan hadapkan ke depan. Selipkan jempol antara pangkal jari tengah dan manis. <br /><br /> 
+                Huruf R dilakukan dengan menyilangkan jari tengah di atas jari telunjuk. <br /><br /> 
               </p>
             </div>
           </div>
     
           {/* Tombol Navigasi */}
           <div className="flex justify-between w-full mt-8 px-10 lg:px-[72px]">
-            <Link to="/module-alfabet-6" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+            <Link to="/module-alfabet-8" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
               Previous
             </Link>
-            <Link to="/module-alfabet-8" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+            <Link to="/module-alfabet-10" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
               Next
             </Link>
           </div>
@@ -57,4 +57,4 @@ const ModuleAlfabet7 = () => {
       );
 };
 
-export default ModuleAlfabet7;
+export default ModuleAlfabet9;
