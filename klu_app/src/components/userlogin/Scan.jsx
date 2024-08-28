@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 
 const Scan = () => {
   const [prediction, setPrediction] = useState('');
   const [testChar, setTestChar] = useState('');
   const [completedChars, setCompletedChars] = useState([]);
+  const testCharRef = useRef('');
+
+  const generateRandomChar = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const randomChar = chars[Math.floor(Math.random() * chars.length)];
+    setTestChar(randomChar);
+    testCharRef.current = randomChar;
+    console.log(`New test character generated: ${randomChar}`);
+  };
 
   useEffect(() => {
-    const generateRandomChar = () => {
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      const randomChar = chars[Math.floor(Math.random() * chars.length)];
-      setTestChar(randomChar);
-    };
-
     generateRandomChar();
 
     const video = document.createElement('video');
@@ -33,33 +36,35 @@ const Scan = () => {
       const sendFrame = () => {
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
         const image = canvas.toDataURL('image/jpeg').split(',')[1];
-
         axios
           .post('http://localhost:5000/predict', { image })
           .then(response => {
             const predictedChar = response.data.prediction;
             setPrediction(predictedChar);
-
-            if (predictedChar === testChar) {
-              setCompletedChars(prevChars => [...prevChars, testChar]);
-              generateRandomChar(); 
+            console.log(`Prediction: ${predictedChar}, Test Char: ${testCharRef.current}`);
+            if (predictedChar === testCharRef.current) {
+              console.log('Match found!');
+              const matchedChar = testCharRef.current;
+              setCompletedChars(prevChars => [...prevChars, matchedChar]);
+              console.log(`Added ${matchedChar} to completed characters`);
+              generateRandomChar();
             }
           })
           .catch(error => console.error('Error:', error));
       };
 
-      setInterval(sendFrame, 1000); 
+      const intervalId = setInterval(sendFrame, 1000);
+
+      return () => {
+        clearInterval(intervalId);
+        if (video.srcObject) {
+          video.srcObject.getTracks().forEach(track => track.stop());
+        }
+      };
     };
 
     startVideo();
-
-    return () => {
-      if (video.srcObject) {
-        video.srcObject.getTracks().forEach(track => track.stop());
-      }
-      video.remove();
-    };
-  }, [testChar]);
+  }, []);
 
   return (
     <div
