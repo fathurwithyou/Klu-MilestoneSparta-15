@@ -13,6 +13,8 @@ import Test from "./components/Test";
 import Modules from "./components/Modules";
 import Scan from "./components/Scan";
 import Profile from "./components/Profile";
+import ModuleAlfabet from "./components/ModuleAlfabet";
+import ModuleKalimat from "./components/ModuleKalimat";
 
 function App() {
   return (
@@ -85,6 +87,24 @@ function App() {
             <div>
               <NavbarLogin />
               <Profile />
+            </div>
+          }
+        />
+        <Route
+          path="/module-alfabet"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleAlfabet />
+            </div>
+          }
+        />
+        <Route
+          path="/module-kalimat"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleKalimat />
             </div>
           }
         />
