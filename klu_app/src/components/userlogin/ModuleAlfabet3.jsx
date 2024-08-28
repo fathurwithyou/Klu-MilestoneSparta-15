@@ -53,7 +53,7 @@ const ModuleAlfabet3 = () => {
             </Link>
           </div>
         </div>
-      );
+    );
 };
 
 export default ModuleAlfabet3;

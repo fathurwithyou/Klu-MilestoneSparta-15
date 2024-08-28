@@ -44,6 +44,13 @@ const ModuleKalimat = () => {
           </p>
         </div>
         </div>
+
+        {/* Tombol Navigasi */}
+        <div className="flex justify-center w-full mt-8 px-10 lg:px-[72px]">
+          <Link to="/modules" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+            Modules
+          </Link>
+        </div>
       </div>
   );
 };
