@@ -33,7 +33,7 @@ const HomeLogin = () => {
         {/* Kolom Kiri */}
         <div className="w-full lg:w-2/5 p-5 flex flex-col">
           <h2 className="text-lg font-semibold mb-4"><span className='text-navy'>Modules</span></h2>
-          <div className="flex flex-col lg:flex-row gap-10 flex-grow">
+          <div className="flex flex-col lg:flex-row gap-4 flex-grow">
             <div className="w-full lg:w-1/2 flex flex-col items-center">
               <div className="custom-image-container">
                 <img src={alfabet} alt="Alfabet" className="custom-image bordered-image" />
@@ -58,7 +58,7 @@ const HomeLogin = () => {
         </div>
       </div>
 
-      <hr className="w-full border-t-2 border-navy my-1" />
+      <hr className="w-full border-t-2 border-navy my-8" />
 
       <h2 className="text-lg font-semibold text-navy pl-10">Test</h2>
 
