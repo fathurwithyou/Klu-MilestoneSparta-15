@@ -4,7 +4,7 @@ import hurufG from '../../asset/huruf g.jpeg';
 import hurufH from '../../asset/huruf h.jpeg'; 
 import HomeIcon from './HomeIcon';
 
-const ModuleAlfabet2 = () => {
+const ModuleAlfabet4 = () => {
     return (
         <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
           <HomeIcon />
@@ -45,10 +45,10 @@ const ModuleAlfabet2 = () => {
     
           {/* Tombol Navigasi */}
           <div className="flex justify-between w-full mt-8 px-10 lg:px-[72px]">
-            <Link to="/module-alfabet-2" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+            <Link to="/module-alfabet-3" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
               Previous
             </Link>
-            <Link to="/module-alfabet-4" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+            <Link to="/module-alfabet-5" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
               Next
             </Link>
           </div>
@@ -56,4 +56,4 @@ const ModuleAlfabet2 = () => {
       );
 };
 
-export default ModuleAlfabet2;
+export default ModuleAlfabet4;
