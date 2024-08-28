@@ -11,7 +11,7 @@ const About = () => {
           <img
             src={logo}
             alt="Gambar Deskripsi"
-            className="max-w-full h-auto transform transition-transform duration-300"
+            className="max-w-full h-auto transform transition-transform duration-300 ml-3"
             width={300}
           />
         </div>
