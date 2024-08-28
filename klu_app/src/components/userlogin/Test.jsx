@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import abjad_klu from '../../asset/abjad_klu.png'; // Ganti dengan path yang benar ke gambar Anda
+import abjad_klu from '../../asset/abjad_klu.png';
+import HomeIcon from './HomeIcon';
 
 const Test = () => {
   const [remainingTime, setRemainingTime] = useState(600); // 10 menit dalam detik
   const [currentQuestion, setCurrentQuestion] = useState(1);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -35,8 +37,13 @@ const Test = () => {
     'Huruf E'
   ];
 
+  const handleAnswerClick = (index) => {
+    setSelectedAnswer(index);
+  };
+
   return (
     <div id="bg" className="w-full h-screen flex justify-center items-center px-10 lg:px-[72px] pt-[100px]">
+      <HomeIcon /> 
       <div className="w-3/4 h-3/4 flex flex-col items-start p-10">
         <div className="w-full h-full flex">
           {/* Kolom Kiri */}
@@ -69,9 +76,10 @@ const Test = () => {
               <div className="flex flex-col gap-2 w-full">
                 {Array.from({ length: 5 }, (_, i) => (
                   <div key={i} className="flex items-center gap-2">
-                    <button className="w-4 h-4 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm">
-                      {String.fromCharCode(65 + i)}
-                    </button>
+                    <button
+                      onClick={() => handleAnswerClick(i)}
+                      className={`w-4 h-4 rounded-full flex items-center justify-center text-sm ${selectedAnswer === i ? 'bg-blue-500' : 'bg-gray-300'}`}
+                    />
                     <span>{answerDescriptions[i]}</span>
                   </div>
                 ))}

@@ -1,10 +1,12 @@
 import React from 'react';
 import Assalamualaikum from '../../asset/assalamualaikum.jpg'; 
 import Selamat from '../../asset/selamat.jpg'; 
+import HomeIcon from './HomeIcon'
 
 const ModuleKalimat = () => {
   return (
     <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
+      <HomeIcon />
       <h1 className="font-bold text-navy text-5xl mb-2 ml-8 lg:ml-5 mt-10">Modules - Kata/Frasa</h1>
       <div className="p-2 lg:pt-3 mt-2 w-full flex flex-col lg:flex-row">
 
@@ -40,6 +42,13 @@ const ModuleKalimat = () => {
           Mengapa terbentuk gerakan ini? Menyerupai ketika seseorang memberikan selamat kepada orang lain.
           </p>
         </div>
+        </div>
+
+        {/* Tombol Navigasi */}
+        <div className="flex justify-center w-full mt-8 px-10 lg:px-[72px]">
+          <Link to="/modules" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+            Modules
+          </Link>
         </div>
       </div>
   );

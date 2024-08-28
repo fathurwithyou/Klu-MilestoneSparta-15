@@ -81,7 +81,7 @@ const SignupPage = () => {
       
       <form onSubmit={validateAndSubmit} className="flex flex-wrap justify-between w-80 lg:w-[600px]">
         <div className="block text-sm font-medium leading-6 w-full lg:w-[48%] mb-4">
-          <label htmlFor="name" className="block mb-1">
+          <label htmlFor="name" className="block mb-1 text-navy">
             Name
           </label>
           <input
@@ -95,7 +95,7 @@ const SignupPage = () => {
         </div>
 
         <div className="block text-sm font-medium leading-6 w-full lg:w-[48%] mb-4">
-          <label htmlFor="dob" className="block mb-1">
+          <label htmlFor="dob" className="block mb-1 text-navy">
             Date of Birth
           </label>
           <input
@@ -109,7 +109,7 @@ const SignupPage = () => {
         </div>
 
         <div className="block text-sm font-medium leading-6 w-full lg:w-[48%] mb-4">
-          <label htmlFor="username" className="block mb-1">
+          <label htmlFor="username" className="block mb-1 text-navy">
             Username
           </label>
           <input
@@ -123,7 +123,7 @@ const SignupPage = () => {
         </div>
 
         <div className="block text-sm font-medium leading-6 w-full lg:w-[48%] mb-4">
-          <label htmlFor="email" className="block mb-1">
+          <label htmlFor="email" className="block mb-1 text-navy">
             Email
           </label>
           <input
@@ -137,7 +137,7 @@ const SignupPage = () => {
         </div>
 
         <div className="block text-sm font-medium leading-6 w-full lg:w-[48%] mb-4">
-          <label htmlFor="password" className="block mb-1">
+          <label htmlFor="password" className="block mb-1 text-navy">
             Password
           </label>
           <input
@@ -151,7 +151,7 @@ const SignupPage = () => {
         </div>
 
         <div className="block text-sm font-medium leading-6 w-full lg:w-[48%] mb-4">
-          <label htmlFor="confirmPassword" className="block mb-1">
+          <label htmlFor="confirmPassword" className="block mb-1 text-navy">
             Confirm Password
           </label>
           <input

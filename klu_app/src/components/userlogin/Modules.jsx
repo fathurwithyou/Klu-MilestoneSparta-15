@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HomeIcon from './HomeIcon'
 
 const Modules = () => {
   return (
     <div id="bg" className="w-full h-screen flex flex-col items-start lg:px-[72px] pt-[100px]">
+      <HomeIcon />
       <h1 className="font-bold text-navy text-5xl mb-2 pl-3 pt-20">Modules</h1>
       <div className="p- lg:pt-3 mt-2 w-full flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/5 flex justify-center lg:justify-start mb-8 lg:mb-0">
@@ -19,7 +21,7 @@ const Modules = () => {
 
           {/* Button Link */}
           <div className="absolute bottom-[-50px] right-0">
-            <Link to="/module-alfabet">
+            <Link to="/module-alfabet-1">
               <button className="px-8 lg:px-12 py-2 bg-navy outline-none text-white rounded-xl text-lg lg:text-1/2xl w-full lg:w-auto font-semibold">
                 View Module ➜
               </button>

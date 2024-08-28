@@ -28,8 +28,8 @@ const HomeLogin = () => {
 
   return (
     <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
-      <h1 className="font-bold text-navy text-6xl mb-2 mt-10">Welcome, User!</h1>
-      <div className="p-2 lg:pt-3 w-full flex flex-col lg:flex-row items-stretch">
+      <h1 className=" text-navy text-5xl mb-2 mt-10">Welcome, <span className="font-semibold">User</span>!</h1>
+      <div className="p-2 lg:pt-0 w-full flex flex-col lg:flex-row items-stretch">
         {/* Kolom Kiri */}
         <div className="w-full lg:w-2/5 p-5 flex flex-col">
           <h2 className="text-lg font-semibold mb-4"><span className='text-navy'>Modules</span></h2>
@@ -51,16 +51,16 @@ const HomeLogin = () => {
         {/* Kolom Kanan */}
         <div className="w-full lg:w-3/5 p-5 flex flex-col">
           <h2 className="text-lg font-semibold mb-4"><span className='text-navy'>Scan</span></h2>
-          <div className="w-full h-40 bg-gray-200 flex items-center justify-center mb-4 flex-grow">
+          <div className="w-full h-40 bg-gray-200 flex items-center justify-center mb-4 flex-grow rounded-xl">
             <input type="file" accept="image/*,video/*" className="hidden" id="upload-media" />
             <button onClick={openModal} className="cursor-pointer">Upload Photo or Video</button>
           </div>
         </div>
       </div>
 
-      <hr className="w-full border-t-2 border-navy my-4" />
+      <hr className="w-full border-t-2 border-navy my-1" />
 
-      <h2 className="text-lg font-semibold mb-4 text-navy pl-10">Test</h2>
+      <h2 className="text-lg font-semibold text-navy pl-10">Test</h2>
 
       <div className="w-full flex flex-col lg:flex-row items-stretch">
         {/* Kolom Kiri */}
