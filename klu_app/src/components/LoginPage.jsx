@@ -28,7 +28,7 @@ const LoginPage = () => {
         localStorage.setItem("authToken", token);
         
         // Navigate to the dashboard or another protected route
-        navigate('/home'); 
+        navigate('/dashboard'); 
       }
     } catch (error) {
       setError(error.response?.data.message || "Login failed");
