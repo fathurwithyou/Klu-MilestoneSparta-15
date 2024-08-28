@@ -15,6 +15,8 @@ import ModuleAlfabet2 from "./components/userlogin/ModuleAlfabet2";
 import ModuleAlfabet3 from './components/userlogin/ModuleAlfabet3';
 import ModuleAlfabet4 from './components/userlogin/ModuleAlfabet4';
 import ModuleAlfabet5 from './components/userlogin/ModuleAlfabet5';
+import ModuleAlfabet6 from './components/userlogin/ModuleAlfabet6';
+import ModuleAlfabet7 from './components/userlogin/ModuleAlfabet7';
 import ModuleKalimat from "./components/userlogin/ModuleKalimat";
 
 function App() {
@@ -133,6 +135,24 @@ function App() {
             <div>
               <NavbarLogin />
               <ModuleAlfabet5 />
+            </div>
+          }
+        />
+        <Route
+          path="/module-alfabet-6"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleAlfabet6 />
+            </div>
+          }
+        />
+        <Route
+          path="/module-alfabet-7"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleAlfabet7 />
             </div>
           }
         />
