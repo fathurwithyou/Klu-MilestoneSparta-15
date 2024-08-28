@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import hurufA from '../../asset/huruf A.jpeg'; 
 import hurufB from '../../asset/huruf B.jpeg'; 
-import HomeIcon from './HomeIcon'
+import HomeIcon from './HomeIcon';
 
 const ModuleAlfabet1 = () => {
   return (
@@ -43,8 +43,18 @@ const ModuleAlfabet1 = () => {
           Mengapa bentuknya seperti ini? Bentuk tangan ini menyerupai huruf B kecil (b), dengan keempat jari yang tegak mewakili garis vertikal dan ibu jari melambangkan bagian bulat huruf b.
           </p>
         </div>
-        </div>
       </div>
+
+      {/* Tombol Navigasi */}
+      <div className="flex justify-between w-full mt-8 px-10 lg:px-[72px]">
+        <Link to="/modules" className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+          Previous
+        </Link>
+        <Link to="/module-alfabet-2" className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+          Next
+        </Link>
+      </div>
+    </div>
   );
 };
 

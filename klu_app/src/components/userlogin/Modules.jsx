@@ -21,7 +21,7 @@ const Modules = () => {
 
           {/* Button Link */}
           <div className="absolute bottom-[-50px] right-0">
-            <Link to="/module-alfabet">
+            <Link to="/module-alfabet-1">
               <button className="px-8 lg:px-12 py-2 bg-navy outline-none text-white rounded-xl text-lg lg:text-1/2xl w-full lg:w-auto font-semibold">
                 View Module ➜
               </button>

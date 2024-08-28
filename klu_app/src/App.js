@@ -10,7 +10,8 @@ import Test from "./components/userlogin/Test";
 import Modules from "./components/userlogin/Modules";
 import Scan from "./components/userlogin/Scan";
 import Profile from "./components/userlogin/Profile";
-import ModuleAlfabet from "./components/userlogin/ModuleAlfabet1";
+import ModuleAlfabet1 from "./components/userlogin/ModuleAlfabet1";
+import ModuleAlfabet2 from "./components/userlogin/ModuleAlfabet2";
 import ModuleKalimat from "./components/userlogin/ModuleKalimat";
 
 function App() {
@@ -88,11 +89,20 @@ function App() {
           }
         />
         <Route
-          path="/module-alfabet"
+          path="/module-alfabet-1"
           element={
             <div>
               <NavbarLogin />
-              <ModuleAlfabet />
+              <ModuleAlfabet1 />
+            </div>
+          }
+        />
+        <Route
+          path="/module-alfabet-2"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleAlfabet2 />
             </div>
           }
         />
