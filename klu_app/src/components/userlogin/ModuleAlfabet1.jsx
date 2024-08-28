@@ -4,7 +4,7 @@ import hurufA from '../../asset/huruf A.jpeg';
 import hurufB from '../../asset/huruf B.jpeg'; 
 import HomeIcon from './HomeIcon'
 
-const ModuleAlfabet = () => {
+const ModuleAlfabet1 = () => {
   return (
     <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
       <HomeIcon />
@@ -48,4 +48,4 @@ const ModuleAlfabet = () => {
   );
 };
 
-export default ModuleAlfabet;
+export default ModuleAlfabet1;

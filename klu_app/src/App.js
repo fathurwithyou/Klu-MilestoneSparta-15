@@ -10,7 +10,7 @@ import Test from "./components/userlogin/Test";
 import Modules from "./components/userlogin/Modules";
 import Scan from "./components/userlogin/Scan";
 import Profile from "./components/userlogin/Profile";
-import ModuleAlfabet from "./components/userlogin/ModuleAlfabet";
+import ModuleAlfabet from "./components/userlogin/ModuleAlfabet1";
 import ModuleKalimat from "./components/userlogin/ModuleKalimat";
 
 function App() {
