@@ -37,7 +37,7 @@ const ModuleAlfabet9 = () => {
                 className="max-w-full h-auto transform transition-transform duration-300 rounded-lg"
                 style={{ width: '280px', height: '210px' }}
               />
-              <h2 className="font-bold text-navy text-4xl mt-2">P</h2> 
+              <h2 className="font-bold text-navy text-4xl mt-2">R</h2> 
               <p className="text-lg text-navy mt-2">
                 Huruf R dilakukan dengan menyilangkan jari tengah di atas jari telunjuk. <br /><br /> 
               </p>

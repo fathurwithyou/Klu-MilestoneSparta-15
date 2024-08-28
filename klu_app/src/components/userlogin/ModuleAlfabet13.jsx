@@ -51,7 +51,7 @@ const ModuleAlfabet13 = () => {
               Previous
             </Link>
             <Link to="/modules" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
-              Next
+              Modules
             </Link>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import hurufW from '../../asset/huruf u.jpeg'; 
-import hurufX from '../../asset/huruf v.jpeg'; 
+import hurufW from '../../asset/huruf w.jpeg'; 
+import hurufX from '../../asset/huruf x.jpeg'; 
 import HomeIcon from './HomeIcon';
 
 const ModuleAlfabet12 = () => {
