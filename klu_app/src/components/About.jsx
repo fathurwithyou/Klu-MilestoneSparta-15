@@ -3,25 +3,22 @@ import logo from "../asset/logo_klu.png";
 
 const About = () => {
   return (
-    <div id='about' className="p-5 lg:pt-3 mt-10">
-      <h1 className="text-center font-bold text-navy text-5xl mb-8">About</h1>
-      <div className="w-full flex flex-col lg:flex-row items-center justify-between">
-        {/* Kolom Kiri untuk Gambar */}
-        <div className="w-full lg:w-1/5 flex justify-center lg:justify-start mb-8 lg:mb-0">
+    <div id='about' className="p-5 lg:pt-3 mt-10 flex justify-center items-center">
+      <div className="w-full lg:w-3/5 flex flex-col items-center">
+        <h1 className="text-center font-bold text-navy text-5xl mb-8">About</h1>
+        {/* Baris Pertama untuk Gambar */}
+        <div className="w-full flex justify-center mb-8 -mt-12">
           <img
             src={logo}
             alt="Gambar Deskripsi"
-            className="max-w-full h-auto transform transition-transform duration-300 ml-10 lg:ml-8"
-            width={200}
+            className="max-w-full h-auto transform transition-transform duration-300"
+            width={300}
           />
         </div>
-        {/* Kolom Kanan untuk Teks */}
-        <div className="w-full lg:w-4/5 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+        {/* Baris Kedua untuk Teks */}
+        <div className="w-full flex flex-col justify-center items-center text-center -mt-10">
           <p className="text-lg text-navy">
-            <span className="text-navy font-semibold">Klu</span> adalah aplikasi mobile yang dibuat untuk memudahkan komunikasi
-            bagi tunawicara dan membantu pembelajaran bahasa isyarat bagi masyarakat yang lain. Aplikasi ini berisi fitur yang
-            interaktif untuk mengenali, mempelajari, dan penggunaan bahasa isyarat dalam situasi tertentu dengan memanfaatkan
-            computer vision.
+            <span className="text-navy font-semibold">Klu</span> adalah aplikasi mobile yang dibuat untuk memudahkan komunikasi bagi tunawicara dan membantu pembelajaran bahasa isyarat bagi masyarakat yang lain. Aplikasi ini berisi fitur yang interaktif untuk mengenali, mempelajari, dan penggunaan bahasa isyarat dalam situasi tertentu dengan memanfaatkan computer vision.
           </p>
         </div>
       </div>
