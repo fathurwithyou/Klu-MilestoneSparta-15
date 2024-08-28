@@ -1,8 +1,10 @@
 import React from 'react';
+import HomeIcon from './HomeIcon'
 
 const Profile = () => {
   return (
     <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
+      <HomeIcon />
       <div className="w-full flex flex-col items-start mt-16"> {/* Menambahkan margin-top */}
         <h1 className="font-bold text-5xl text-navy mb-8">Profile</h1>
       </div>

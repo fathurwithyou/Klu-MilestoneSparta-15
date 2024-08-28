@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import hurufA from '../../asset/huruf A.jpeg'; 
 import hurufB from '../../asset/huruf B.jpeg'; 
+import HomeIcon from './HomeIcon'
 
 const ModuleAlfabet = () => {
   return (
     <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
+      <HomeIcon />
       <h1 className="font-bold text-navy text-5xl mb-2 ml-8 lg:ml-5 mt-10">Modules - Alfabet</h1>
       <div className="p-2 lg:pt-3 mt-2 w-full flex flex-col lg:flex-row">
 

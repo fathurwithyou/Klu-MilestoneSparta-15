@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Assalamualaikum from '../../asset/assalamualaikum.jpg'; 
 import Selamat from '../../asset/selamat.jpg'; 
+import HomeIcon from './HomeIcon'
 
 const ModuleKalimat = () => {
   return (
     <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
+      <HomeIcon />
       <h1 className="font-bold text-navy text-5xl mb-2 ml-8 lg:ml-5 mt-10">Modules - Kata/Frasa</h1>
       <div className="p-2 lg:pt-3 mt-2 w-full flex flex-col lg:flex-row">
 
