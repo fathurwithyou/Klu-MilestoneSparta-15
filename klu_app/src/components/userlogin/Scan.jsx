@@ -12,7 +12,6 @@ const Scan = () => {
     const randomChar = chars[Math.floor(Math.random() * chars.length)];
     setTestChar(randomChar);
     testCharRef.current = randomChar;
-    console.log(`New test character generated: ${randomChar}`);
   };
 
   useEffect(() => {
@@ -41,12 +40,9 @@ const Scan = () => {
           .then(response => {
             const predictedChar = response.data.prediction;
             setPrediction(predictedChar);
-            console.log(`Prediction: ${predictedChar}, Test Char: ${testCharRef.current}`);
             if (predictedChar === testCharRef.current) {
-              console.log('Match found!');
               const matchedChar = testCharRef.current;
               setCompletedChars(prevChars => [...prevChars, matchedChar]);
-              console.log(`Added ${matchedChar} to completed characters`);
               generateRandomChar();
             }
           })
