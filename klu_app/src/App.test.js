@@ -230,7 +230,7 @@ describe('App', () => {
   });
 
   test('renders ModuleAlfabet11 component for /module-alfabet-11 route', () => {
-    ModuleAlfabet10.mockImplementation(() => <div>ModuleAlfabet11 Component</div>);
+    ModuleAlfabet11.mockImplementation(() => <div>ModuleAlfabet11 Component</div>);
     render(
       <MemoryRouter initialEntries={['/module-alfabet-11']}>
         <App />
