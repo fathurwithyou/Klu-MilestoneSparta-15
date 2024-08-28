@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import hurufA from '../asset/huruf A.jpeg'; 
-import hurufB from '../asset/huruf B.jpeg'; 
+import hurufA from '../../asset/huruf A.jpeg'; 
+import hurufB from '../../asset/huruf B.jpeg'; 
 
 const ModuleAlfabet = () => {
   return (

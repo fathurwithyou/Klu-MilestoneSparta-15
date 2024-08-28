@@ -21,7 +21,7 @@ const Home = () => {
           <h1 className="font-bold text-black text-5xl">Belajar Bahasa Isyarat dengan <span className="text-navy">Klu</span>!</h1>
           {/* Add getting started */}
           <button
-            className="bg-navy text-white font-semibold text-xl py-2 px-4 rounded-lg mt-8 hover:bg-blue-900">Getting Started</button>
+            className="bg-navy text-white font-semibold text-xl py-2 px-4 rounded-lg mt-8 hover:bg-blue-900">Getting Started ➜</button>
         </div>
       </div>
       <About />

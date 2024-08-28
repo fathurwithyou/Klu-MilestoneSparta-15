@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Webcam from 'react-webcam';
-import alfabet from '../asset/alfabet.jpg'; 
-import katafrasa from '../asset/katafrasa.jpg'; 
-import abjad_klu from '../asset/abjad_klu.png';
+import alfabet from '../../asset/alfabet.jpg'; 
+import katafrasa from '../../asset/katafrasa.jpg'; 
+import abjad_klu from '../../asset/abjad_klu.png';
 
 const HomeLogin = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

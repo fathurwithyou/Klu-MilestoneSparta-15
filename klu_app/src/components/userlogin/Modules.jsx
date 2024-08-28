@@ -3,19 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Modules = () => {
   return (
-    <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
-      <h1 className="font-bold text-navy text-5xl mb-2 ml-8 lg:ml-5 mt-10">Modules</h1>
-      <div className="p-2 lg:pt-3 mt-2 w-full flex flex-col lg:flex-row">
-
-        {/* Kolom Kiri untuk Subjudul */}
+    <div id="bg" className="w-full h-screen flex flex-col items-start lg:px-[72px] pt-[100px]">
+      <h1 className="font-bold text-navy text-5xl mb-2 pl-3 pt-20">Modules</h1>
+      <div className="p- lg:pt-3 mt-2 w-full flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/5 flex justify-center lg:justify-start mb-8 lg:mb-0">
-          <h2 className="font-bold text-navy text-3xl mb-2 ml-8 lg:ml-5 mt-10 pl-20">Alfabet</h2>
+          <h2 className="font-bold text-navy text-3xl mb-2 lg:ml-5 mt-10 pl-20">Alfabet</h2>
         </div>
-
-        {/* Garis pemisah */}
         <div className="hidden lg:block w-[2px] bg-blue-300 mx-4"></div>
-
-        {/* Kolom Kanan untuk Teks */}
         <div className="w-full lg:w-4/5 flex flex-col lg:items-start text-center lg:text-left relative mb-20">
           <div style={{ backgroundColor: 'rgb(230, 236, 255)', padding: '20px', borderRadius: '10px' }}>
             <p className="text-lg text-navy">

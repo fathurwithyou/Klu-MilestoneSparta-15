@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import abjad_klu from '../asset/abjad_klu.png'; // Ganti dengan path yang benar ke gambar Anda
+import abjad_klu from '../../asset/abjad_klu.png'; // Ganti dengan path yang benar ke gambar Anda
 
 const Test = () => {
   const [remainingTime, setRemainingTime] = useState(600); // 10 menit dalam detik

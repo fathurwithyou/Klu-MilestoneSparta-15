@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Notification from "./Notification"; 
 
 const SignupPage = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +14,8 @@ const SignupPage = () => {
   });
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [notification, setNotification] = useState(null);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -38,7 +42,8 @@ const SignupPage = () => {
       if (availabilityResponse.status === 200) {
         const submitResponse = await axios.post("http://localhost:8000/submit-form", formData);
         if (submitResponse.status === 200) {
-          alert("Form submitted successfully");
+          setNotification({ message: "Form submitted successfully!", type: "success" });
+
           setFormData({
             name: "",
             dob: "",
@@ -47,6 +52,9 @@ const SignupPage = () => {
             password: "",
             confirmPassword: "",
           });
+          setTimeout(() => {
+            navigate("/loginpage");
+          }, 3000); 
         }
       }
     } catch (error) {
@@ -63,7 +71,14 @@ const SignupPage = () => {
       </div>
 
       {error && <p className="text-red-500 mb-4">{error}</p>}
-
+      {notification && (
+        <Notification
+          message={notification.message}
+          type={notification.type}
+          onClose={() => setNotification(null)}
+        />
+      )}
+      
       <form onSubmit={validateAndSubmit} className="flex flex-wrap justify-between w-80 lg:w-[600px]">
         <div className="block text-sm font-medium leading-6 w-full lg:w-[48%] mb-4">
           <label htmlFor="name" className="block mb-1">

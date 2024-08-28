@@ -2,19 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-// import About from "./components/About";
-// import Services from "./components/Services";
-// import Login from "./components/Login";
 import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
-import NavbarLogin from "./components/NavbarLogin";
-import HomeLogin from "./components/HomeLogin";
-import Test from "./components/Test";
-import Modules from "./components/Modules";
-import Scan from "./components/Scan";
-import Profile from "./components/Profile";
-import ModuleAlfabet from "./components/ModuleAlfabet";
-import ModuleKalimat from "./components/ModuleKalimat";
+import NavbarLogin from "./components/userlogin/NavbarLogin";
+import HomeLogin from "./components/userlogin/HomeLogin";
+import Test from "./components/userlogin/Test";
+import Modules from "./components/userlogin/Modules";
+import Scan from "./components/userlogin/Scan";
+import Profile from "./components/userlogin/Profile";
+import ModuleAlfabet from "./components/userlogin/ModuleAlfabet";
+import ModuleKalimat from "./components/userlogin/ModuleKalimat";
 
 function App() {
   return (

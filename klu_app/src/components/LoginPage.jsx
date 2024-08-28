@@ -21,14 +21,11 @@ const LoginPage = () => {
       });
 
       if (response.status === 200) {
-        // Assuming your backend returns a token or some user data
         const { token, user } = response.data;
         
-        // Save token to localStorage or a context/state management solution
         localStorage.setItem("authToken", token);
         
-        // Navigate to the dashboard or another protected route
-        navigate('/dashboard'); 
+        navigate('/home'); 
       }
     } catch (error) {
       setError(error.response?.data.message || "Login failed");

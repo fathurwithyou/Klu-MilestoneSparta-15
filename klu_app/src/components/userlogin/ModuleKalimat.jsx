@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Assalamualaikum from '../asset/assalamualaikum.jpg'; 
-import Selamat from '../asset/selamat.jpg'; 
+import Assalamualaikum from '../../asset/assalamualaikum.jpg'; 
+import Selamat from '../../asset/selamat.jpg'; 
 
 const ModuleKalimat = () => {
   return (

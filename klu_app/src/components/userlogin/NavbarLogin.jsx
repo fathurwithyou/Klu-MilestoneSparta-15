@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import logo from '../asset/logo_klu.png';
+import logo from '../../asset/logo_klu.png';
 import { CgProfile } from 'react-icons/cg'; // Import ikon CgProfile
 // import { navLink } from "../data/dummy";
 // import { FiMenu } from "react-icons/fi";
