@@ -3,8 +3,18 @@ import axios from 'axios';
 
 const Scan = () => {
   const [prediction, setPrediction] = useState('');
+  const [testChar, setTestChar] = useState('');
+  const [completedChars, setCompletedChars] = useState([]);
 
   useEffect(() => {
+    const generateRandomChar = () => {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const randomChar = chars[Math.floor(Math.random() * chars.length)];
+      setTestChar(randomChar);
+    };
+
+    generateRandomChar();
+
     const video = document.createElement('video');
     video.width = 640;
     video.height = 480;
@@ -27,21 +37,29 @@ const Scan = () => {
         axios
           .post('http://localhost:5000/predict', { image })
           .then(response => {
-            setPrediction(response.data.prediction);
+            const predictedChar = response.data.prediction;
+            setPrediction(predictedChar);
+
+            if (predictedChar === testChar) {
+              setCompletedChars(prevChars => [...prevChars, testChar]);
+              generateRandomChar(); 
+            }
           })
           .catch(error => console.error('Error:', error));
       };
 
-      setInterval(sendFrame, 1000); // Send a frame every second
+      setInterval(sendFrame, 1000); 
     };
 
     startVideo();
 
     return () => {
-      video.pause();
-      video.srcObject.getTracks().forEach(track => track.stop());
+      if (video.srcObject) {
+        video.srcObject.getTracks().forEach(track => track.stop());
+      }
+      video.remove();
     };
-  }, []);
+  }, [testChar]);
 
   return (
     <div
@@ -55,6 +73,15 @@ const Scan = () => {
       <h1 className="text-2xl font-semibold text-gray-700 mt-6">
         Predicted Character: <span className="text-blue-600">{prediction}</span>
       </h1>
+      <h2 className="text-xl font-medium text-gray-700 mt-4">
+        Current Test Character: <span className="text-green-600">{testChar}</span>
+      </h2>
+      <div className="mt-4">
+        <h3 className="text-lg font-medium text-gray-600">Completed Characters:</h3>
+        <div className="text-xl font-bold text-purple-600">
+          {completedChars.join(', ')}
+        </div>
+      </div>
     </div>
   );
 };
