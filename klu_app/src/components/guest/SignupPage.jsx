@@ -65,7 +65,7 @@ const SignupPage = () => {
   };
 
   return (
-    <div id="bg" className="w-full h-screen flex flex-col justify-center items-center px-10 lg:px-[72px] pt-[100px]">
+    <div id="bg" className="w-full h-screen flex flex-col justify-center items-center">
       <div className="header mb-8">
         <h1 className="font-bold text-5xl text-blue-500">Sign Up</h1>
       </div>
