@@ -39,7 +39,7 @@
     display: flex;
   }
   .mobile-menu {
-    display: flex;
+    @apply flex items-center mt-4 lg:mt-0
   }
 }
 

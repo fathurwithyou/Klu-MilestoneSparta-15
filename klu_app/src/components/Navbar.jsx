@@ -69,16 +69,16 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div class='mobile-menu' className="flex items-center mt-4 lg:mt-0">
+        <div class='mobile-menu'>
           <button onClick={handleMenuToggle} className="text-navy">
-            {isMenuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+            {isMenuOpen ? <FaTimes size={40} /> : <FaBars size={40} />}
           </button>
         </div>
       </div>
 
       <div
         class = "mobile-menu"
-        className={`lg:hidden fixed top-0 left-0 w-full h-full bg-navy text-white flex flex-col items-center justify-center transform ${
+        className={`fixed top-0 left-0 w-full h-full bg-navy text-white flex flex-col items-center justify-center transform ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300`}>
         <ul className="flex flex-col gap-y-4">
