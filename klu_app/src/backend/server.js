@@ -154,6 +154,42 @@ app.get("/profile", authenticate, async (req, res) => {
   }
 });
 
+app.post("/update-profile", authenticate, async (req, res) => {
+  const { username } = req.user;
+  const { name, dob, email } = req.body;
+
+  try {
+    const response = await sheets.spreadsheets.values.get({
+      spreadsheetId: SPREADSHEET_ID,
+      range: RANGE,
+    });
+
+    const rows = response.data.values || [];
+    const userIndex = rows.findIndex((row) => row[1] === username);
+
+    if (userIndex === -1) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const updatedRow = [rows[userIndex][0], username, rows[userIndex][2], name, dob, email];
+    rows[userIndex] = updatedRow;
+
+    await sheets.spreadsheets.values.update({
+      spreadsheetId: SPREADSHEET_ID,
+      range: `user!A${userIndex + 2}:F${userIndex + 2}`,
+      valueInputOption: "RAW",
+      resource: {
+        values: [updatedRow],
+      },
+    });
+
+    res.status(200).json({ user: { username, name, dob, email } });
+  } catch (error) {
+    console.error("Error updating profile:", error);
+    res.status(500).json({ message: "Error updating profile" });
+  }
+});
+
 app.get("/home", authenticate, (req, res) => {
   res.json({ message: `Welcome, ${req.user.username}!` });
 });

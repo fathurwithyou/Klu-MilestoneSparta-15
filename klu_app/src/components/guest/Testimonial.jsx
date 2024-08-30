@@ -3,19 +3,19 @@ import React from "react";
 const testimonials = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Fayadh",
     text: "This platform has completely changed the way I learn. The interface is user-friendly, and the content is top-notch.",
     role: "Software Engineer",
   },
   {
     id: 2,
-    name: "Jane Smith",
-    text: "I've tried many other platforms, but this one stands out for its quality and community support.",
-    role: "Product Manager",
+    name: "Velicia",
+    text: "I've tried many other platforms, but this one stands out for its design and experience.",
+    role: "UI/UX Designer",
   },
   {
     id: 3,
-    name: "Alice Johnson",
+    name: "Fathurwithyou",
     text: "Learning with this platform has been a game-changer for my career. Highly recommended!",
     role: "Data Scientist",
   },

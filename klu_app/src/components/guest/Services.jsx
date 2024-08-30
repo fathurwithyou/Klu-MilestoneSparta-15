@@ -3,7 +3,7 @@ import React from 'react'
 const Services = () => {
     return (
         <div id='services' className="p-5 lg:pt-3 mt-10">
-            <h1 className="text-center font-bold text-navy text-3xl md:text-5xl mb-8">Services</h1>
+            <h1 className="text-center font-bold text-navy text-3xl md:text-5xl mb-[72px]">Services</h1>
             <div className="w-full flex flex-col space-y-8">
                 {/* Baris 1 */}
                 <div className="w-full flex flex-col border border-blue-500 p-4 rounded-lg">

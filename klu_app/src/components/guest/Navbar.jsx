@@ -33,10 +33,10 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed top-0 w-full h-[100px] z-50 ${
+      className={`fixed top-0 w-full z-50 ${
         scrollPosition > 50 && !isMenuOpen ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
       }`}>
-      <div className="flex justify-between items-center px-5 lg:p-[30px] h-full">
+      <div className="flex justify-between items-center px-5 lg:px-[30px] -mt-[30px] h-full">
         <div className="flex items-center mt-4 lg:mt-0">
           <RouterLink to="/">
             <img src={logo} alt="klu" className="w-[100px] sm:w-[192px] cursor-pointer" />
@@ -91,12 +91,12 @@ const Navbar = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="text-lg lg:text-2xl font-semibold cursor-pointer"
+                className="text-2xl font-semibold cursor-pointer"
                 onClick={handleMenuToggle}>
                 {item.name}
               </ScrollLink>
             ) : (
-              <RouterLink to={item.id} key={item.id} className="text-lg lg:text-2xl font-semibold" onClick={handleMenuToggle}>
+              <RouterLink to={item.id} key={item.id} className="text-2xl font-semibold" onClick={handleMenuToggle}>
                 {item.name}
               </RouterLink>
             );
