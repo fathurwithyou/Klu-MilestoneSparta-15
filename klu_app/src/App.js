@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import LoginPage from "./components/LoginPage";
@@ -12,18 +12,19 @@ import Scan from "./components/userlogin/Scan";
 import Profile from "./components/userlogin/Profile";
 import ModuleAlfabet1 from "./components/userlogin/ModuleAlfabet1";
 import ModuleAlfabet2 from "./components/userlogin/ModuleAlfabet2";
-import ModuleAlfabet3 from './components/userlogin/ModuleAlfabet3';
-import ModuleAlfabet4 from './components/userlogin/ModuleAlfabet4';
-import ModuleAlfabet5 from './components/userlogin/ModuleAlfabet5';
-import ModuleAlfabet6 from './components/userlogin/ModuleAlfabet6';
-import ModuleAlfabet7 from './components/userlogin/ModuleAlfabet7';
-import ModuleAlfabet8 from './components/userlogin/ModuleAlfabet8';
-import ModuleAlfabet9 from './components/userlogin/ModuleAlfabet9';
-import ModuleAlfabet10 from './components/userlogin/ModuleAlfabet10';
-import ModuleAlfabet11 from './components/userlogin/ModuleAlfabet11';
-import ModuleAlfabet12 from './components/userlogin/ModuleAlfabet12';
-import ModuleAlfabet13 from './components/userlogin/ModuleAlfabet13';
+import ModuleAlfabet3 from "./components/userlogin/ModuleAlfabet3";
+import ModuleAlfabet4 from "./components/userlogin/ModuleAlfabet4";
+import ModuleAlfabet5 from "./components/userlogin/ModuleAlfabet5";
+import ModuleAlfabet6 from "./components/userlogin/ModuleAlfabet6";
+import ModuleAlfabet7 from "./components/userlogin/ModuleAlfabet7";
+import ModuleAlfabet8 from "./components/userlogin/ModuleAlfabet8";
+import ModuleAlfabet9 from "./components/userlogin/ModuleAlfabet9";
+import ModuleAlfabet10 from "./components/userlogin/ModuleAlfabet10";
+import ModuleAlfabet11 from "./components/userlogin/ModuleAlfabet11";
+import ModuleAlfabet12 from "./components/userlogin/ModuleAlfabet12";
+import ModuleAlfabet13 from "./components/userlogin/ModuleAlfabet13";
 import ModuleKalimat from "./components/userlogin/ModuleKalimat";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -37,16 +38,6 @@ function App() {
             </div>
           }
         />
-        {/* Rute dengan Navbar_login */}
-        <Route
-          path="/home"
-          element={
-            <div>
-              <NavbarLogin />
-              <HomeLogin />
-            </div>
-          }
-          />
         <Route
           path="/loginpage"
           element={
@@ -55,20 +46,22 @@ function App() {
             </div>
           }
         />
-        <Route 
-          path="/signuppage" 
-            element={
-              <div>
-                <SignupPage />
-              </div>
-            } 
-          />
+        <Route
+          path="/signuppage"
+          element={
+            <div>
+              <SignupPage />
+            </div>
+          }
+        />
         <Route
           path="/test"
           element={
             <div>
-              <NavbarLogin />
-              <Test />
+              <ProtectedRoute>
+                <NavbarLogin />
+                <Test />
+              </ProtectedRoute>
             </div>
           }
         />
@@ -76,8 +69,10 @@ function App() {
           path="/modules"
           element={
             <div>
-              <NavbarLogin />
-              <Modules />
+              <ProtectedRoute>
+                <NavbarLogin />
+                <Modules />
+              </ProtectedRoute>
             </div>
           }
         />
@@ -85,8 +80,10 @@ function App() {
           path="/scan"
           element={
             <div>
-              <NavbarLogin />
-              <Scan />
+              <ProtectedRoute>
+                <NavbarLogin />
+                <Scan />
+              </ProtectedRoute>
             </div>
           }
         />
@@ -94,8 +91,10 @@ function App() {
           path="/profile"
           element={
             <div>
-              <NavbarLogin />
-              <Profile />
+              <ProtectedRoute>
+                <NavbarLogin />
+                <Profile />
+              </ProtectedRoute>
             </div>
           }
         />
@@ -103,8 +102,10 @@ function App() {
           path="/module-alfabet-1"
           element={
             <div>
-              <NavbarLogin />
-              <ModuleAlfabet1 />
+              <ProtectedRoute>
+                <NavbarLogin />
+                <ModuleAlfabet1 />
+              </ProtectedRoute>
             </div>
           }
         />
@@ -112,8 +113,10 @@ function App() {
           path="/module-alfabet-2"
           element={
             <div>
-              <NavbarLogin />
-              <ModuleAlfabet2 />
+              <ProtectedRoute>
+                <NavbarLogin />
+                <ModuleAlfabet2 />
+              </ProtectedRoute>
             </div>
           }
         />
@@ -225,8 +228,15 @@ function App() {
             </div>
           }
         />
-        {/* Rute tanpa Navbar */}
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <NavbarLogin />
+              <HomeLogin />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
   );

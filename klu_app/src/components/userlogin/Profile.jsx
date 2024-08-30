@@ -6,15 +6,18 @@ const Profile = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Logika untuk logout (misalnya, menghapus token, dll.)
+    // Clear the auth token from local storage
+    localStorage.removeItem("authToken");
+
+    // Redirect to the login page
     navigate('/');
   };
 
   return (
-    <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[50px]"> {/* Mengurangi padding atas */}
+    <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[50px]"> 
       <HomeIcon />
-      <div className="w-full flex flex-col items-start mt-16"> {/* Menambahkan margin-top */}
-        <h1 className="font-bold text-5xl text-navy mb-8 mt-10">Profile</h1> {/* Menambahkan margin-top */}
+      <div className="w-full flex flex-col items-start mt-16"> 
+        <h1 className="font-bold text-5xl text-navy mb-8 mt-10">Profile</h1> 
       </div>
       <div className="w-full flex justify-center">
         <div className="block text-sm font-medium leading-6 w-80">
