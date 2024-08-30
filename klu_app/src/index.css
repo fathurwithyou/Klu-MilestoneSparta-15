@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   font-family: "Poppins", sans-serif;
@@ -11,8 +11,97 @@
   transition: all 0.2s ease-in-out;
 }
 
-#bg{
-  background: radial-gradient(154.17% 87.68% at 50% 52.04%, #FFF 32%, #6888F9 100%);
+#bg {
+  background: radial-gradient(154.17% 87.68% at 50% 52.04%, #fff 32%, #6888f9 100%);
+}
+
+/* Navbar visibility for screens >= 1290px */
+@media (min-width: 1290px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Navbar visibility for screens < 1290px */
+@media (max-width: 1289px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger-menu {
+    display: flex;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+#card {
+  @apply w-[310px] md:w-[400px];
+}
+
+.arrows {
+  width: 100px;
+}
+
+.arrows path {
+  stroke: #3b4cc0;
+  fill: transparent;
+  stroke-width: 3px;
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/ {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.arrows path.a1 {
+  animation-delay: -1s;
+  -webkit-animation-delay: -1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+  animation-delay: -0.5s;
+  -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {
+  animation-delay: 0s;
+  -webkit-animation-delay: 0s; /* Safari 和 Chrome */
 }
 
 .custom-image-container {
@@ -20,7 +109,7 @@
   height: 250px;
   flex-shrink: 0;
   border-radius: 20px;
-  border: 0px solid #568BFB;
+  border: 0px solid #568bfb;
   background: white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   display: flex;

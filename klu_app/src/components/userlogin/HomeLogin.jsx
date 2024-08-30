@@ -30,7 +30,6 @@ const HomeLogin = () => {
     <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
       <h1 className=" text-navy text-5xl mb-2 mt-10">Welcome, <span className="font-semibold">User</span>!</h1>
       <div className="p-2 lg:pt-0 w-full flex flex-col lg:flex-row items-stretch">
-        {/* Kolom Kiri */}
         <div className="w-full lg:w-2/5 p-5 flex flex-col">
           <h2 className="text-lg font-semibold mb-4"><span className='text-navy'>Modules</span></h2>
           <div className="flex flex-col lg:flex-row gap-4 flex-grow">
@@ -48,7 +47,7 @@ const HomeLogin = () => {
             </div>
           </div>
         </div>
-        {/* Kolom Kanan */}
+
         <div className="w-full lg:w-3/5 p-5 flex flex-col">
           <h2 className="text-lg font-semibold mb-4"><span className='text-navy'>Scan</span></h2>
           <div className="w-full h-40 bg-gray-200 flex items-center justify-center mb-4 flex-grow rounded-xl">

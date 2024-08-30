@@ -99,7 +99,7 @@ app.post("/login", async (req, res) => {
     const token = jwt.sign(
       { username: user[1], name: user[3], email: user[5] },
       JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "7d" }
     );
 
     res.status(200).json({ token, user: { username: user[1], name: user[3], email: user[5] } });
@@ -117,12 +117,42 @@ const authenticate = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
-    req.user = decoded;
+    req.user = decoded; 
     next();
   } catch (error) {
     res.status(403).json({ message: "Invalid token" });
   }
 };
+
+app.get("/profile", authenticate, async (req, res) => {
+  const { username } = req.user; 
+
+  try {
+    const response = await sheets.spreadsheets.values.get({
+      spreadsheetId: SPREADSHEET_ID,
+      range: RANGE,
+    });
+
+    const rows = response.data.values || [];
+    const user = rows.find((row) => row[1] === username);
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const userProfile = {
+      username: user[1],
+      name: user[3],
+      dob: user[4],
+      email: user[5],
+    };
+
+    res.status(200).json({ user: userProfile });
+  } catch (error) {
+    console.error("Error fetching profile:", error);
+    res.status(500).json({ message: "Error fetching profile" });
+  }
+});
 
 app.get("/home", authenticate, (req, res) => {
   res.json({ message: `Welcome, ${req.user.username}!` });

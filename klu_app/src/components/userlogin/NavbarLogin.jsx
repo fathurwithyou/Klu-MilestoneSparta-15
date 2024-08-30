@@ -2,11 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import logo from '../../asset/logo_klu.png';
-import { CgProfile } from 'react-icons/cg'; // Import ikon CgProfile
-// import { navLink } from "../data/dummy";
-// import { FiMenu } from "react-icons/fi";
-// import { AiOutlineMenu } from 'react-icons/ai';
-// import { AiOutlineClose } from "react-icons/ai";
+import { CgProfile } from 'react-icons/cg'; 
 
 const navLink = [
   { id: '/modules', name: 'Modules' },
@@ -24,7 +20,9 @@ const NavbarLogin = () => {
   return (
     <div className="flex justify-between items-center px-5 lg:px-[72px] h-[80px] w-full fixed top-0">
       <div className="flex items-center mt-16">
-        <img src={logo} alt="klu" className="h-52 w-auto" />
+        <Link to="/home">
+         <img src={logo} alt="klu" className="h-52 w-auto" />
+        </Link>
       </div>
       <div className="flex items-center mt-16"> {/* Add margin-top to move the list and profile icon down */}
         <ul className="flex gap-x-10">
