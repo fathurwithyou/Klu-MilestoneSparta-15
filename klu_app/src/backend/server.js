@@ -96,11 +96,7 @@ app.post("/login", async (req, res) => {
     if (!user || !(await bcrypt.compare(password, user[2]))) {
       return res.status(401).json({ message: "Invalid username or password" });
     }
-    const token = jwt.sign(
-      { username: user[1], name: user[3], email: user[5] },
-      JWT_SECRET,
-      { expiresIn: "7d" }
-    );
+    const token = jwt.sign({ username: user[1], name: user[3], email: user[5] }, JWT_SECRET, { expiresIn: "7d" });
 
     res.status(200).json({ token, user: { username: user[1], name: user[3], email: user[5] } });
   } catch (error) {
@@ -117,7 +113,7 @@ const authenticate = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET);
-    req.user = decoded; 
+    req.user = decoded;
     next();
   } catch (error) {
     res.status(403).json({ message: "Invalid token" });
@@ -125,7 +121,7 @@ const authenticate = (req, res, next) => {
 };
 
 app.get("/profile", authenticate, async (req, res) => {
-  const { username } = req.user; 
+  const { username } = req.user;
 
   try {
     const response = await sheets.spreadsheets.values.get({
@@ -155,8 +151,8 @@ app.get("/profile", authenticate, async (req, res) => {
 });
 
 app.post("/update-profile", authenticate, async (req, res) => {
-  const { username } = req.user;
-  const { name, dob, email } = req.body;
+  const oldUsername = req.user.username;
+  const { name, dob, email, username } = req.body;
 
   try {
     const response = await sheets.spreadsheets.values.get({
@@ -165,8 +161,8 @@ app.post("/update-profile", authenticate, async (req, res) => {
     });
 
     const rows = response.data.values || [];
-    const userIndex = rows.findIndex((row) => row[1] === username);
-
+    const userIndex = rows.findIndex((row) => row[1] === oldUsername);
+    console.log(oldUsername, userIndex);
     if (userIndex === -1) {
       return res.status(404).json({ message: "User not found" });
     }
@@ -176,7 +172,7 @@ app.post("/update-profile", authenticate, async (req, res) => {
 
     await sheets.spreadsheets.values.update({
       spreadsheetId: SPREADSHEET_ID,
-      range: `user!A${userIndex + 2}:F${userIndex + 2}`,
+      range: `user!A${userIndex + 1}:F${userIndex + 1}`,
       valueInputOption: "RAW",
       resource: {
         values: [updatedRow],
