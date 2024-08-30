@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink } from "react-router-dom";
-import logo from "../asset/logo_klu.png";
+import logo from "../../asset/logo_klu.png";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import hamburger and close icons
 
 const navLink = [
@@ -34,12 +34,12 @@ const Navbar = () => {
   return (
     <div
       className={`fixed top-0 w-full h-[100px] z-50 ${
-        scrollPosition > 50 ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
+        scrollPosition > 50 && !isMenuOpen ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"
       }`}>
       <div className="flex justify-between items-center px-5 lg:p-[30px] h-full">
         <div className="flex items-center mt-4 lg:mt-0">
           <RouterLink to="/">
-            <img src={logo} alt="klu" className="w-[100px] sm:w-[192px]cursor-pointer" />
+            <img src={logo} alt="klu" className="w-[100px] sm:w-[192px] cursor-pointer" />
           </RouterLink>
         </div>
 
@@ -70,8 +70,8 @@ const Navbar = () => {
         </ul>
 
         <div class='mobile-menu'>
-          <button onClick={handleMenuToggle} className="text-navy">
-            {isMenuOpen ? <FaTimes size={40} /> : <FaBars size={40} />}
+          <button onClick={handleMenuToggle} className="text-navy z-50">
+            {isMenuOpen ? <FaTimes size={40} className="text-white" /> : <FaBars size={40}  />}
           </button>
         </div>
       </div>

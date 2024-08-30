@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import LoginPage from "./components/LoginPage";
-import SignupPage from "./components/SignupPage";
+import Home from "./components/guest/Home";
+import LoginPage from "./components/guest/LoginPage";
+import SignupPage from "./components/guest/SignupPage";
 import NavbarLogin from "./components/userlogin/NavbarLogin";
 import HomeLogin from "./components/userlogin/HomeLogin";
 import Test from "./components/userlogin/Test";
@@ -24,7 +24,7 @@ import ModuleAlfabet11 from "./components/userlogin/ModuleAlfabet11";
 import ModuleAlfabet12 from "./components/userlogin/ModuleAlfabet12";
 import ModuleAlfabet13 from "./components/userlogin/ModuleAlfabet13";
 import ModuleKalimat from "./components/userlogin/ModuleKalimat";
-import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/guest/ProtectedRoute";
 
 function App() {
   return (

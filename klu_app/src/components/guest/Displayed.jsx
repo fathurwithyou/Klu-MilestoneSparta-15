@@ -1,5 +1,5 @@
 import React from "react";
-import foto from "../asset/landing_page.png";
+import foto from "../../asset/landing_page.png";
 import { Link as ScrollLink } from "react-scroll";
 
 const Displayed = () => {

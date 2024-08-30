@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../asset/logo_klu.png";
+import logo from "../../asset/logo_klu.png";
 
 const About = () => {
   return (
