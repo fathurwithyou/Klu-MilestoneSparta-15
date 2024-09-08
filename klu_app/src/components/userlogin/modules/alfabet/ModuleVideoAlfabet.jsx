@@ -1,36 +1,58 @@
 import React, { useRef } from 'react';
+import ReactPlayer from 'react-player';
+import { FaPlay, FaPause, FaForward } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ModuleVideoAlfabet = () => {
-  const videoRef = useRef(null);
+  const playerRef = useRef(null);
 
   const handlePlay = () => {
-    videoRef.current.play();
+    playerRef.current.getInternalPlayer().playVideo();
   };
 
   const handlePause = () => {
-    videoRef.current.pause();
+    playerRef.current.getInternalPlayer().pauseVideo();
   };
 
   const handleForward = () => {
-    videoRef.current.currentTime += 5;
+    const currentTime = playerRef.current.getCurrentTime();
+    playerRef.current.seekTo(currentTime + 5, 'seconds');
   };
 
   return (
-    <div id = "bg" className="w-full h-screen flex flex-col items-center lg:px-[72px] pt-[100px]">
-      <h1 className="font-bold text-navy text-5xl mb-8">Module Video Alfabet</h1>
+    <div id="bg" className="w-full h-screen flex flex-col items-start lg:px-[32px] pt-[100px]">
+      <div className="w-full flex justify-start items-start mb-8">
+        <h1 className="font-bold text-navy text-5xl mt-12 ml-0">Module Video Alfabet</h1>
+      </div>
       
-      <div className="w-full max-w-2xl mb-8">
-        <video ref={videoRef} className="w-full rounded-lg" controls>
-          <source src="/path/to/your/video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <div className="w-full max-w-2xl mb-8 mx-auto">
+        <ReactPlayer
+          ref={playerRef}
+          url="https://www.youtube.com/watch?v=03kWuwWQwu0&t=37s"
+          className="w-full rounded-lg"
+          controls
+        />
         <div className="flex justify-center space-x-4 mt-4">
-          <button onClick={handlePlay} className="px-4 py-2 bg-green-500 text-white rounded-lg">Play</button>
-          <button onClick={handlePause} className="px-4 py-2 bg-red-500 text-white rounded-lg">Pause</button>
-          <button onClick={handleForward} className="px-4 py-2 bg-blue-500 text-white rounded-lg">Forward 5s</button>
+          <button onClick={handlePause} className="px-4 py-2 bg-navy text-white rounded-lg flex items-center">
+            <FaPause /> 
+          </button>
+          <button onClick={handlePlay} className="px-4 py-2 bg-indigo-300 text-white rounded-lg flex items-center">
+            <FaPlay />
+          </button>
+          <button onClick={handleForward} className="px-4 py-2 bg-indigo-600 text-white rounded-lg flex items-center">
+            <FaForward />
+          </button>
         </div>
       </div>
 
+      {/* Button Back */}
+      <div className="w-full flex justify-end pr-8 pb-4">
+        <Link to="/module-alfabet">
+          <button className="px-8 py-2 bg-navy text-white rounded-lg">
+            Back
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

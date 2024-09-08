@@ -5,15 +5,15 @@ import HomeIcon from './HomeIcon';
 
 const Modules = () => {
   return (
-    <div id="bg" className="w-full h-screen flex flex-col items-start lg:px-[72px] pt-[100px]">
+    <div id="bg" className="w-full h-screen flex flex-col items-start lg:px-[32px] pt-[100px]">
       <HomeIcon />
-      <h1 className="font-bold text-navy text-5xl mb-2 pl-3 pt-20">Modules</h1>
+      <h1 className="font-bold text-navy text-5xl mb-2 pt-16">Modules</h1>
       
       {/* Bagian Alfabet */}
       <div className="w-full flex flex-col items-start mt-8">
         <div className="w-full flex flex-row items-start relative">
           <div className="w-1/5 flex justify-start mb-8 lg:mb-0 relative">
-            <h2 className="font-bold text-navy text-3xl mb-2 lg:ml-5 mt-10">Alfabet</h2>
+            <h2 className="font-bold text-navy text-3xl mb-2 mt-10">Alfabet</h2>
             {/* <div className="absolute top-1/2 left-full transform -translate-y-1/2 ml-2 text-blue-500">
               <FaArrowRight size={24} />
             </div> */}
@@ -41,7 +41,7 @@ const Modules = () => {
       <div className="w-full flex flex-col items-start mt-8">
         <div className="w-full flex flex-row items-start relative">
           <div className="w-1/5 flex justify-start mb-8 lg:mb-0 relative">
-            <h2 className="font-bold text-navy text-3xl mb-2 lg:ml-5 mt-10">Kalimat</h2>
+            <h2 className="font-bold text-navy text-3xl mb-2 mt-10">Kalimat</h2>
             {/* <div className="absolute top-1/2 left-full transform -translate-y-1/2 ml-2 text-blue-500">
               <FaArrowRight size={24} />
             </div> */}

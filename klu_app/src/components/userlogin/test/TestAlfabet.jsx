@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HomeIcon from '../HomeIcon';
+import hurufC from "../../../asset/huruf c.jpeg";
+import hurufF from "../../../asset/huruf f.jpeg";
+import hurufJ from "../../../asset/huruf j.jpeg";
+import hurufO from "../../../asset/huruf o.jpeg";
+import hurufV from "../../../asset/huruf v.jpeg";
 import PertanyaanAlfabet from './PertanyaanAlfabet';
 
 const TestAlfabet = () => {
@@ -11,7 +16,14 @@ const TestAlfabet = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setRemainingTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
+      setRemainingTime((prevTime) => {
+        if (prevTime <= 1) {
+          clearInterval(timer);
+          calculateScore();
+          return 0;
+        }
+        return prevTime - 1;
+      });
     }, 1000);
 
     return () => clearInterval(timer);
@@ -29,6 +41,10 @@ const TestAlfabet = () => {
     }
   };
 
+  const handleSubmit = () => {
+    calculateScore();
+  };
+
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -37,28 +53,28 @@ const TestAlfabet = () => {
 
   const questions = [
     {
-      image: '/path/to/image1.jpg',
+      image: hurufC,
       answers: ['Huruf A', 'Huruf B', 'Huruf C', 'Huruf D', 'Huruf E']
     },
     {
-      image: '/path/to/image2.jpg',
+      image: hurufF,
       answers: ['Huruf F', 'Huruf G', 'Huruf H', 'Huruf I', 'Huruf J']
     },
     {
-      image: '/path/to/image3.jpg',
-      answers: ['Huruf K', 'Huruf L', 'Huruf M', 'Huruf N', 'Huruf O']
+      image: hurufJ,
+      answers: ['Huruf B', 'Huruf J', 'Huruf N', 'Huruf V', 'Huruf Z']
     },
     {
-      image: '/path/to/image4.jpg',
-      answers: ['Huruf P', 'Huruf Q', 'Huruf R', 'Huruf S', 'Huruf T']
+      image: hurufO,
+      answers: ['Huruf G', 'Huruf A', 'Huruf R', 'Huruf O', 'Huruf Z']
     },
     {
-      image: '/path/to/image5.jpg',
+      image: hurufV,
       answers: ['Huruf U', 'Huruf V', 'Huruf W', 'Huruf X', 'Huruf Y']
     }
   ];
 
-  const correctAnswers = [0, 1, 2, 3, 4]; // Jawaban benar untuk setiap pertanyaan
+  const correctAnswers = [2, 0, 1, 3, 1]; // Jawaban benar untuk setiap pertanyaan
 
   const handleAnswerClick = (index) => {
     const newSelectedAnswers = [...selectedAnswers];
@@ -73,16 +89,18 @@ const TestAlfabet = () => {
     navigate('/hasil-test-alfabet', { state: { score } });
   };
 
+  const answeredQuestionsCount = selectedAnswers.filter(answer => answer !== null).length;
+
   return (
     <div id="bg" className="w-full h-screen flex flex-col items-center lg:px-[72px] pt-[100px]">
       <HomeIcon />
       <div className="w-3/4 h-3/4 flex flex-col items-start p-10">
         <div className="w-full h-full flex">
           {/* Kolom Kiri */}
-          <div className="w-1/4 flex flex-col">
+          <div className="w-1/4 flex flex-col space-y-4">
             {/* Baris Pertama */}
-            <div className="flex-1 border bg-white border-white shadow-lg p-4 mb-4 h-24">
-              <h2 className="text-sm font-semibold mb-2">Question</h2>
+            <div className="border bg-white border-white shadow-lg p-4 h-44 rounded-xl">
+              <h2 className="text-sm font-bold text-navy mb-2">Questions</h2>
               <ul className="flex flex-wrap gap-2 mb-4">
                 {Array.from({ length: 5 }, (_, i) => (
                   <li key={i} className={`w-1/4 text-center ${currentQuestion === i + 1 ? 'font-bold' : ''}`}>
@@ -98,8 +116,13 @@ const TestAlfabet = () => {
               </div>
             </div>
             {/* Baris Kedua */}
-            <div className="flex-2 border bg-white border-white shadow-lg p-4 h-24">
-              <h2 className="text-sm font-semibold mb-2">Remaining Time</h2>
+            <div className="border bg-white border-white shadow-lg p-4 h-24 rounded-xl">
+              <h2 className="text-sm font-bold text-navy mb-2">Questions Answered</h2>
+              <div className="text-2xl font-bold">{answeredQuestionsCount} / 5</div>
+            </div>
+            {/* Baris Ketiga */}
+            <div className="border bg-white border-white shadow-lg p-4 h-24">
+              <h2 className="text-sm font-bold text-navy mb-2">Remaining Time</h2>
               <div className="text-2xl font-bold">{formatTime(remainingTime)}</div>
             </div>
           </div>
@@ -114,6 +137,9 @@ const TestAlfabet = () => {
           </div>
         </div>
       </div>
+      <button onClick={handleSubmit} className="px-4 py-2 font-semibold bg-navy text-white rounded self-end mt-4">
+        <p className="px-8">Submit</p>
+      </button>
     </div>
   );
 };

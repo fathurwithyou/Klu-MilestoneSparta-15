@@ -47,7 +47,7 @@ const ModuleAlfabet1 = () => {
 
       {/* Tombol Navigasi */}
       <div className="flex justify-between w-full mt-8 px-10 lg:px-[72px]">
-        <Link to="/modules" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
+        <Link to="/module-alfabet" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">
           Previous
         </Link>
         <Link to="/module-alfabet-2" className="bg-navy text-white py-2 px-4 rounded-lg hover:bg-blue-700">

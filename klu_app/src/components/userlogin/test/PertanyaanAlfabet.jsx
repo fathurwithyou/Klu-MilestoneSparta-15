@@ -3,7 +3,7 @@ import React from 'react';
 const PertanyaanAlfabet = ({ question, answers, selectedAnswer, onAnswerClick }) => {
   return (
     <div className="flex flex-col items-start">
-      <img src={question.image} alt="Question" className="w-1/2 h-auto mb-4" />
+      <img src={question.image} alt="Question" className="w-1/3 h-auto mb-4" />
       <div className="flex flex-col gap-2 w-full">
         {answers.map((answer, index) => (
           <div key={index} className="flex items-center gap-2">
