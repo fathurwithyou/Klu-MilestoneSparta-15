@@ -6,7 +6,7 @@ const HasilTestAlfabet = () => {
   const { score } = location.state || { score: 0 };
 
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center">
+    <div id="bg" className="w-full h-screen flex flex-col items-center lg:px-[72px] pt-[100px]">
       <h1 className="font-bold text-navy text-5xl mb-8">Test Result</h1>
       <div className="bg-white p-10 rounded-lg shadow-lg text-center">
         <h2 className="text-3xl font-bold mb-4">Your Score: {score} / 5</h2>
