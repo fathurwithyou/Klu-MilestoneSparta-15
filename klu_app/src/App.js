@@ -6,10 +6,14 @@ import LoginPage from "./components/guest/LoginPage";
 import SignupPage from "./components/guest/SignupPage";
 import NavbarLogin from "./components/userlogin/NavbarLogin";
 import HomeLogin from "./components/userlogin/HomeLogin";
-import Test from "./components/userlogin/Test";
+import Test from "./components/userlogin/test/Test";
+import TestAlfabet from "./components/userlogin/test/TestAlfabet";
+import HasilTestAlfabet from "./components/userlogin/test/HasilTestAlfabet";
+import TestKalimat from "./components/userlogin/test/TestKalimat";
 import Modules from "./components/userlogin/Modules";
 import Scan from "./components/userlogin/Scan";
 import Profile from "./components/userlogin/Profile";
+import ModuleAlfabet from "./components/userlogin/modules/alfabet/ModuleAlfabet";
 import ModuleAlfabet1 from "./components/userlogin/modules/alfabet/ModuleAlfabet1";
 import ModuleAlfabet2 from "./components/userlogin/modules/alfabet/ModuleAlfabet2";
 import ModuleAlfabet3 from "./components/userlogin/modules/alfabet/ModuleAlfabet3";
@@ -24,6 +28,9 @@ import ModuleAlfabet11 from "./components/userlogin/modules/alfabet/ModuleAlfabe
 import ModuleAlfabet12 from "./components/userlogin/modules/alfabet/ModuleAlfabet12";
 import ModuleAlfabet13 from "./components/userlogin/modules/alfabet/ModuleAlfabet13";
 import ModuleKalimat from "./components/userlogin/modules/kalimat/ModuleKalimat";
+import ModuleKalimat1 from "./components/userlogin/modules/kalimat/ModuleKalimat1";
+import ModuleVideoAlfabet from "./components/userlogin/modules/alfabet/ModuleVideoAlfabet";
+import ModuleVideoKalimat from "./components/userlogin/modules/kalimat/ModuleVideoKalimat";
 import ProtectedRoute from "./components/guest/ProtectedRoute";
 
 function App() {
@@ -66,12 +73,56 @@ function App() {
           }
         />
         <Route
+          path="/test-alfabet"
+          element={
+            <div>
+              <ProtectedRoute>
+                <NavbarLogin />
+                <TestAlfabet />
+              </ProtectedRoute>
+            </div>
+          }
+        />
+        <Route
+          path="/hasil-test-alfabet"
+          element={
+            <div>
+              <ProtectedRoute>
+                <NavbarLogin />
+                <HasilTestAlfabet />
+              </ProtectedRoute>
+            </div>
+          }
+        />
+        <Route
+          path="/test-kalimat"
+          element={
+            <div>
+              <ProtectedRoute>
+                <NavbarLogin />
+                <TestKalimat />
+              </ProtectedRoute>
+            </div>
+          }
+        />
+        <Route
           path="/modules"
           element={
             <div>
               <ProtectedRoute>
                 <NavbarLogin />
                 <Modules />
+              </ProtectedRoute>
+            </div>
+          }
+        />
+        <Route
+          path="/module-alfabet"
+          element={
+            <div>
+              <ProtectedRoute>
+                <NavbarLogin />
+                <ModuleAlfabet />
               </ProtectedRoute>
             </div>
           }
@@ -225,6 +276,33 @@ function App() {
             <div>
               <NavbarLogin />
               <ModuleKalimat />
+            </div>
+          }
+        />
+        <Route
+          path="/module-kalimat-1"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleKalimat1 />
+            </div>
+          }
+        />
+        <Route 
+          path="/module-video-alfabet"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleVideoAlfabet />
+            </div>
+          }
+        />
+        <Route 
+          path="/module-video-kalimat"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleVideoKalimat />
             </div>
           }
         />

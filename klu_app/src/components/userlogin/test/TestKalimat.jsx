@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import abjad_klu from '../../asset/abjad_klu.png';
-import HomeIcon from './HomeIcon';
+import abjad_klu from '../../../asset/abjad_klu.png';
+import HomeIcon from '../HomeIcon';
 
-const Test = () => {
+const TestKalimat = () => {
   const [remainingTime, setRemainingTime] = useState(600); // 10 menit dalam detik
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -42,7 +42,7 @@ const Test = () => {
   };
 
   return (
-    <div id="bg" className="w-full h-screen flex justify-center items-center px-10 lg:px-[72px] pt-[100px]">
+    <div id = "bg" className="w-full h-screen flex flex-col items-center lg:px-[72px] pt-[100px]">
       <HomeIcon /> 
       <div className="w-3/4 h-3/4 flex flex-col items-start p-10">
         <div className="w-full h-full flex">
@@ -92,4 +92,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default TestKalimat;

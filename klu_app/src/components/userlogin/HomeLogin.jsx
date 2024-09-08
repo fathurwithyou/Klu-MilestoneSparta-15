@@ -27,7 +27,7 @@ const HomeLogin = () => {
   };
 
   return (
-    <div id="bg" className="w-full h-screen flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
+    <div id="bg" className="w-full h-full flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
       <h1 className=" text-navy text-5xl mb-2 mt-10">Welcome, <span className="font-semibold">User</span>!</h1>
       <div className="p-2 lg:pt-0 w-full flex flex-col lg:flex-row items-stretch">
         <div className="w-full lg:w-2/5 p-5 flex flex-col">
