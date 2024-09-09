@@ -5,9 +5,9 @@ import HomeIcon from "./HomeIcon";
 const Profile = () => {
   const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({
+    username: "",
     name: "",
     dob: "",
-    username: "",
     email: "",
   });
   const [isEditing, setIsEditing] = useState(false);
@@ -27,7 +27,7 @@ const Profile = () => {
         if (response.ok) {
           const data = await response.json();
           setUserInfo(data.user);
-          setEditUserInfo(data.user); // Initialize editUserInfo with fetched data
+          setEditUserInfo(data.user);
         }
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -102,22 +102,19 @@ const Profile = () => {
             {isEditing ? (
               <button
                 onClick={handleSave}
-                className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600"
-              >
+                className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600">
                 Save
               </button>
             ) : (
               <button
                 onClick={handleEditClick}
-                className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600"
-              >
+                className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600">
                 Change Profile
               </button>
             )}
             <button
               onClick={handleLogout}
-              className="w-full bg-red-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-600"
-            >
+              className="w-full bg-red-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-600">
               Log Out
             </button>
           </div>

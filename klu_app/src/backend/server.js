@@ -162,7 +162,6 @@ app.post("/update-profile", authenticate, async (req, res) => {
 
     const rows = response.data.values || [];
     const userIndex = rows.findIndex((row) => row[1] === oldUsername);
-    console.log(oldUsername, userIndex);
     if (userIndex === -1) {
       return res.status(404).json({ message: "User not found" });
     }
