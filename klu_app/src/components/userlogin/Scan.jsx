@@ -9,7 +9,8 @@ const Scan = () => {
   const videoRef = useRef(null);
 
   const generateRandomChar = () => {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    // const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const chars = "BCOL";
     const randomChar = chars[Math.floor(Math.random() * chars.length)];
     setTestChar(randomChar);
     testCharRef.current = randomChar;
@@ -72,7 +73,7 @@ const Scan = () => {
 
   return (
     <div id="bg" className="w-full h-screen flex flex-col items-center justify-center bg-gray-100">
-      <div id="video-container" className="border-4 border-gray-400 rounded-md shadow-lg"></div>
+      <div id="video-container" className="mt-[100px] border-4 border-gray-400 rounded-md shadow-lg"></div>
       <h1 className="text-2xl font-semibold text-gray-700 mt-6">
         Predicted Character: <span className="text-blue-600">{prediction}</span>
       </h1>

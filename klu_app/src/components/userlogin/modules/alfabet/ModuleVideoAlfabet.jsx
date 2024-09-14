@@ -45,7 +45,6 @@ const ModuleVideoAlfabet = () => {
         </div>
       </div>
 
-      {/* Button Back */}
       <div className="w-full flex justify-end pr-8 pb-4">
         <Link to="/module-alfabet">
           <button className="px-8 py-2 bg-navy text-white rounded-lg">

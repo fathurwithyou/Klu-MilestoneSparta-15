@@ -10,7 +10,7 @@ import Test from "./components/userlogin/test/Test";
 import TestAlfabet from "./components/userlogin/test/TestAlfabet";
 import HasilTestAlfabet from "./components/userlogin/test/HasilTestAlfabet";
 import TestKalimat from "./components/userlogin/test/TestKalimat";
-import Modules from "./components/userlogin/Modules";
+import Modules from "./components/userlogin/module/page.jsx";
 import Scan from "./components/userlogin/Scan";
 import Profile from "./components/userlogin/Profile";
 import ModuleAlfabet from "./components/userlogin/modules/alfabet/ModuleAlfabet";
