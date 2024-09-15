@@ -41,14 +41,14 @@ const ModuleKalimat= () => {
           </Link>
         </div>
 
-        {/* Test Modul Alfabet */}
+        {/* Test Modul Kalimat */}
         <div className="w-1/4 h-100 bg-white p-4 rounded-lg shadow-lg flex flex-col items-center">
           <img src={test} alt="Test Modul Alfabet" className="w-80 h-48 mb-4" />
-          <h2 className="font-bold text-navy text-xl mb-2">Test Modul Alfabet</h2>
+          <h2 className="font-bold text-navy text-xl mb-2">Test Modul Kalimat</h2>
           <p className="text-lg text-black text-center mb-4 px-10">
             Berisikan test modul kata/frasa dalam bahasa isyarat.
           </p>
-          <Link to="/test-alfabet">
+          <Link to="/test-kalimat">
             <button className="px-8 py-2 bg-navy text-white rounded-xl text-lg font-semibold">
               Test Modul ➜
             </button>

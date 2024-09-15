@@ -10,6 +10,7 @@ import Test from "./components/userlogin/test/Test";
 import TestAlfabet from "./components/userlogin/test/TestAlfabet";
 import HasilTestAlfabet from "./components/userlogin/test/HasilTestAlfabet";
 import TestKalimat from "./components/userlogin/test/TestKalimat";
+import HasilTestKalimat from "./components/userlogin/test/HasilTestKalimat.jsx";
 import Modules from "./components/userlogin/module/page.jsx";
 import Scan from "./components/userlogin/Scan";
 import Profile from "./components/userlogin/Profile";
@@ -101,6 +102,17 @@ function App() {
               <ProtectedRoute>
                 <NavbarLogin />
                 <TestKalimat />
+              </ProtectedRoute>
+            </div>
+          }
+        />
+        <Route
+          path="/hasil-test-kalimat"
+          element={
+            <div>
+              <ProtectedRoute>
+                <NavbarLogin />
+                <HasilTestKalimat />
               </ProtectedRoute>
             </div>
           }
