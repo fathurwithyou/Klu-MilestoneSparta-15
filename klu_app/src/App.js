@@ -30,8 +30,10 @@ import ModuleAlfabet12 from "./components/userlogin/modules/alfabet/ModuleAlfabe
 import ModuleAlfabet13 from "./components/userlogin/modules/alfabet/ModuleAlfabet13";
 import ModuleKalimat from "./components/userlogin/modules/kalimat/ModuleKalimat";
 import ModuleKalimat1 from "./components/userlogin/modules/kalimat/ModuleKalimat1";
+import ModuleAngka from "./components/userlogin/modules/angka/ModuleAngka.jsx";
 import ModuleVideoAlfabet from "./components/userlogin/modules/alfabet/ModuleVideoAlfabet";
 import ModuleVideoKalimat from "./components/userlogin/modules/kalimat/ModuleVideoKalimat";
+import ModuleVideoAngka from "./components/userlogin/modules/angka/ModuleVideoAngka";
 import ProtectedRoute from "./components/guest/ProtectedRoute";
 
 function App() {
@@ -301,6 +303,15 @@ function App() {
           }
         />
         <Route 
+          path="/module-angka"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleAngka />
+            </div>
+          }
+        />
+        <Route 
           path="/module-video-alfabet"
           element={
             <div>
@@ -315,6 +326,15 @@ function App() {
             <div>
               <NavbarLogin />
               <ModuleVideoKalimat />
+            </div>
+          }
+        />
+        <Route 
+          path="/module-video-angka"
+          element={
+            <div>
+              <NavbarLogin />
+              <ModuleVideoAngka />
             </div>
           }
         />
