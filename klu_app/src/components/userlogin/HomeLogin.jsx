@@ -27,29 +27,29 @@ const HomeLogin = () => {
   };
 
   return (
-    <div id="bg" className="w-full h-full flex flex-col items-start px-10 lg:px-[72px] pt-[100px]">
+    <div id="bg" className="w-full h-full flex flex-col items-start px-10 lg:px-[32px] pt-[100px]">
       <h1 className=" text-navy text-5xl mb-2 mt-10">Welcome, <span className="font-semibold">User</span>!</h1>
       <div className="p-2 lg:pt-0 w-full flex flex-col lg:flex-row items-stretch">
         <div className="w-full lg:w-2/5 p-5 flex flex-col">
-          <h2 className="text-lg font-semibold mb-4"><span className='text-navy'>Modules</span></h2>
+          <h2 className="text-2xl font-semibold mb-4 -ml-6"><span className='text-navy'>Modules</span></h2>
           <div className="flex flex-col lg:flex-row gap-4 flex-grow">
             <div className="w-full lg:w-1/2 flex flex-col items-center">
               <div className="custom-image-container">
                 <img src={alfabet} alt="Alfabet" className="custom-image bordered-image" />
-                <p className="custom-title font-bold">Alfabet</p>
+                <button onClick={() => window.location.href='/module-alfabet'} className=" custom-title font-bold text-white px-4 py-2 rounded-xl hover:bg-dark-navy">Alfabet</button>
               </div>
             </div>
             <div className="w-full lg:w-1/2 flex flex-col items-center">
               <div className="custom-image-container">
                 <img src={katafrasa} alt="Kata/Frasa" className="custom-image bordered-image" />
-                <p className="custom-title font-bold">Kata/Frasa</p>
+                <button onClick={() => window.location.href='/module-kalimat'} className=" custom-title font-bold text-white px-4 py-2 rounded-xl hover:bg-dark-navy">Kata/Frasa</button>
               </div>
             </div>
           </div>
         </div>
 
         <div className="w-full lg:w-3/5 p-5 flex flex-col">
-          <h2 className="text-lg font-semibold mb-4"><span className='text-navy'>Scan</span></h2>
+          <h2 className="text-2xl font-semibold mb-4 "><span className='text-navy'>Scan</span></h2>
           <div className="w-full h-40 bg-gray-200 flex items-center justify-center mb-4 flex-grow rounded-xl">
             <input type="file" accept="image/*,video/*" className="hidden" id="upload-media" />
             <button onClick={openModal} className="cursor-pointer">Upload Photo or Video</button>
@@ -84,8 +84,8 @@ const HomeLogin = () => {
             {!isScanning ? (
               <>
                 <button onClick={handleScan} className="bg-blue-500 text-white px-4 py-2 rounded mr-2 mb-2">Scan</button>
-                <button onClick={handleUpload} className="bg-green-500 text-white px-4 py-2 rounded mb-2">Upload Photo or Video</button>
-                <button onClick={closeModal} className="text-red-500">Cancel</button>
+                <button onClick={handleUpload} className="bg-green-500 text-white px-4 py-2 rounded mr-2 mb-2">Upload Photo or Video</button>
+                <button onClick={closeModal} className="bg-red-500  text-white px-4 py-2 rounded mr-2 mb-2">Cancel</button>
               </>
             ) : (
               <>
