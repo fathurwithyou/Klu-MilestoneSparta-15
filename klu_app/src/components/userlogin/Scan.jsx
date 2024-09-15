@@ -20,7 +20,7 @@ const Scan = () => {
     generateRandomChar();
 
     const video = document.createElement("video");
-    video.width = 640;
+    video.width = 560;
     video.height = 480;
     videoRef.current = video;
     document.getElementById("video-container").appendChild(video);
